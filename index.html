@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Memory Master 🧠</title>
+<title>Memory Master Ultimate 🧠</title>
 
 <style>
 * {
@@ -17,37 +17,73 @@
 body {
     min-height: 100vh;
     font-family: Arial, sans-serif;
-    background: #0f0c29;
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
 }
 
 .game-container {
     width: 100%;
-    max-width: 700px;
+    max-width: 850px;
+    margin: auto;
     text-align: center;
 }
 
 h1 {
     font-size: 3rem;
-    margin-bottom: 8px;
     letter-spacing: 2px;
+    margin-bottom: 8px;
 }
 
 .subtitle {
     color: #b8b8d1;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+}
+
+.level-area {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.level-box {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 18px;
+    border-radius: 12px;
+    min-width: 120px;
+}
+
+.level-box span {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.progress-container {
+    width: 100%;
+    height: 12px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 22px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 5%;
+    background: linear-gradient(90deg, #00f7ff, #ff00cc);
+    transition: width 0.5s;
 }
 
 .stats {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: 12px;
+    margin-bottom: 22px;
     flex-wrap: wrap;
 }
 
@@ -57,12 +93,11 @@ h1 {
     padding: 12px 20px;
     border-radius: 12px;
     min-width: 120px;
-    backdrop-filter: blur(10px);
 }
 
 .stat-box span {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #00f7ff;
 }
@@ -71,6 +106,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
+    max-width: 650px;
+    margin: auto;
 }
 
 .card {
@@ -103,7 +140,7 @@ h1 {
     justify-content: center;
     align-items: center;
     backface-visibility: hidden;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
 }
 
 .card-front {
@@ -113,12 +150,8 @@ h1 {
 
 .card-back {
     background: white;
-    transform: rotateY(180deg);
     color: #222;
-}
-
-.card:hover .card-front {
-    transform: scale(1.03);
+    transform: rotateY(180deg);
 }
 
 .card.matched .card-back {
@@ -127,63 +160,88 @@ h1 {
 }
 
 @keyframes matched {
-    0% {
-        transform: rotateY(180deg) scale(1);
-    }
     50% {
-        transform: rotateY(180deg) scale(1.15);
-    }
-    100% {
-        transform: rotateY(180deg) scale(1);
+        transform: rotateY(180deg) scale(1.12);
     }
 }
 
-.restart-btn {
-    margin-top: 25px;
-    padding: 14px 30px;
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+button {
+    padding: 13px 24px;
     border: none;
     border-radius: 30px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    background: linear-gradient(135deg, #00f7ff, #ff00cc);
     color: white;
+    background: linear-gradient(135deg, #00f7ff, #ff00cc);
     transition: 0.3s;
 }
 
-.restart-btn:hover {
-    transform: scale(1.08);
+button:hover {
+    transform: scale(1.07);
 }
 
 .win-message {
     display: none;
     margin-top: 25px;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 22px;
+    border-radius: 18px;
     background: rgba(0, 255, 157, 0.15);
     border: 1px solid #00ff9d;
 }
 
 .win-message h2 {
     color: #00ff9d;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
-@media (max-width: 500px) {
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    pointer-events: none;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .game-board {
-        gap: 9px;
+        gap: 8px;
     }
 
     .card-front,
     .card-back {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
+    .stat-box {
+        min-width: 95px;
+        padding: 10px;
+    }
 }
 </style>
 </head>
@@ -193,7 +251,30 @@ h1 {
 <div class="game-container">
 
     <h1>🧠 MEMORY MASTER</h1>
-    <p class="subtitle">Flip • Remember • Match • Win 🎮</p>
+    <p class="subtitle">20 Levels • Flip • Remember • Match • Become the Ultimate Master 👑</p>
+
+    <div class="level-area">
+
+        <div class="level-box">
+            LEVEL
+            <span id="level">1</span>
+        </div>
+
+        <div class="level-box">
+            DIFFICULTY
+            <span id="difficulty">Easy</span>
+        </div>
+
+        <div class="level-box">
+            HIGH SCORE
+            <span id="highScore">0</span>
+        </div>
+
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
 
     <div class="stats">
 
@@ -208,32 +289,54 @@ h1 {
         </div>
 
         <div class="stat-box">
+            Score
+            <span id="score">0</span>
+        </div>
+
+        <div class="stat-box">
             Matches
-            <span id="matches">0 / 8</span>
+            <span id="matches">0 / 0</span>
         </div>
 
     </div>
 
     <div class="game-board" id="gameBoard"></div>
 
-    <button class="restart-btn" onclick="startGame()">
-        🔄 Restart Game
-    </button>
+    <div class="buttons">
+
+        <button onclick="startGame()">
+            🔄 Restart Level
+        </button>
+
+        <button onclick="resetProgress()">
+            🗑 Reset Progress
+        </button>
+
+    </div>
 
     <div class="win-message" id="winMessage">
-        <h2>🎉 YOU WON!</h2>
+        <h2 id="winTitle">🎉 LEVEL COMPLETE!</h2>
         <p id="winStats"></p>
+
+        <div class="buttons">
+            <button id="nextButton" onclick="nextLevel()">
+                ➡️ Next Level
+            </button>
+        </div>
     </div>
 
 </div>
 
-
 <script>
 
-const emojis = [
-    "🎮", "🤖", "🚀", "💻",
-    "🔥", "⚡", "🎯", "🧠"
+const allEmojis = [
+    "🎮","🤖","🚀","💻","🔥","⚡","🎯","🧠",
+    "👾","🎵","🌟","🍕","🐱","🦁","🐼","🌈",
+    "🏆","👑","🎲","🎸","🚗","🛸","🦄","🍩"
 ];
+
+let level = Number(localStorage.getItem("memoryLevel")) || 1;
+let highScore = Number(localStorage.getItem("memoryHighScore")) || 0;
 
 let cards = [];
 let flippedCards = [];
@@ -243,10 +346,59 @@ let seconds = 0;
 let timer;
 let gameStarted = false;
 let lockBoard = false;
+let currentPairs = 4;
 
 
 function shuffle(array) {
-    return array.sort(() => Math.random() - 0.5);
+    return [...array].sort(() => Math.random() - 0.5);
+}
+
+
+function getDifficulty() {
+
+    if (level <= 5) {
+        return "🟢 Easy";
+    }
+
+    if (level <= 10) {
+        return "🟡 Medium";
+    }
+
+    if (level <= 15) {
+        return "🟠 Hard";
+    }
+
+    return "🔴 Master";
+}
+
+
+function getPairs() {
+
+    /*
+    Level progression:
+    1-5   = 4 pairs
+    6-10  = 6 pairs
+    11-15 = 8 pairs
+    16-20 = 10 pairs
+    */
+
+    if (level <= 5) return 4;
+    if (level <= 10) return 6;
+    if (level <= 15) return 8;
+    return 10;
+}
+
+
+function updateLevelUI() {
+
+    document.getElementById("level").textContent = level;
+    document.getElementById("difficulty").textContent = getDifficulty();
+    document.getElementById("highScore").textContent = highScore;
+
+    const progress = (level / 20) * 100;
+
+    document.getElementById("progressBar").style.width =
+        `${Math.max(5, progress)}%`;
 }
 
 
@@ -254,7 +406,13 @@ function startGame() {
 
     clearInterval(timer);
 
-    cards = shuffle([...emojis, ...emojis]);
+    currentPairs = getPairs();
+
+    const selectedEmojis =
+        shuffle(allEmojis).slice(0, currentPairs);
+
+    cards =
+        shuffle([...selectedEmojis, ...selectedEmojis]);
 
     flippedCards = [];
     moves = 0;
@@ -263,26 +421,39 @@ function startGame() {
     gameStarted = false;
     lockBoard = false;
 
-    document.getElementById("moves").textContent = moves;
-    document.getElementById("matches").textContent = "0 / 8";
+    updateLevelUI();
+
+    document.getElementById("moves").textContent = "0";
     document.getElementById("timer").textContent = "00:00";
+    document.getElementById("score").textContent = "0";
+
+    document.getElementById("matches").textContent =
+        `0 / ${currentPairs}`;
 
     document.getElementById("winMessage").style.display = "none";
 
-    const board = document.getElementById("gameBoard");
+    const board =
+        document.getElementById("gameBoard");
 
     board.innerHTML = "";
 
-    cards.forEach((emoji, index) => {
+    board.style.gridTemplateColumns =
+        currentPairs <= 6
+        ? "repeat(4, 1fr)"
+        : "repeat(4, 1fr)";
 
-        const card = document.createElement("div");
+
+    cards.forEach((emoji) => {
+
+        const card =
+            document.createElement("div");
 
         card.classList.add("card");
 
         card.dataset.emoji = emoji;
-        card.dataset.index = index;
 
         card.innerHTML = `
+
             <div class="card-inner">
 
                 <div class="card-front">
@@ -294,6 +465,7 @@ function startGame() {
                 </div>
 
             </div>
+
         `;
 
         card.addEventListener("click", flipCard);
@@ -324,11 +496,7 @@ function flipCard() {
 
             seconds++;
 
-            const minutes = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-
-            document.getElementById("timer").textContent =
-                `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+            updateTimer();
 
         }, 1000);
 
@@ -344,7 +512,8 @@ function flipCard() {
 
         moves++;
 
-        document.getElementById("moves").textContent = moves;
+        document.getElementById("moves").textContent =
+            moves;
 
         checkMatch();
 
@@ -353,13 +522,32 @@ function flipCard() {
 }
 
 
+function updateTimer() {
+
+    const minutes =
+        Math.floor(seconds / 60);
+
+    const secs =
+        seconds % 60;
+
+    document.getElementById("timer").textContent =
+        `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+
+}
+
+
 function checkMatch() {
 
     lockBoard = true;
 
-    const [card1, card2] = flippedCards;
+    const [card1, card2] =
+        flippedCards;
 
-    if (card1.dataset.emoji === card2.dataset.emoji) {
+
+    if (
+        card1.dataset.emoji ===
+        card2.dataset.emoji
+    ) {
 
         card1.classList.remove("flipped");
         card2.classList.remove("flipped");
@@ -370,21 +558,16 @@ function checkMatch() {
         matches++;
 
         document.getElementById("matches").textContent =
-            `${matches} / 8`;
+            `${matches} / ${currentPairs}`;
 
         flippedCards = [];
 
         lockBoard = false;
 
 
-        if (matches === 8) {
+        if (matches === currentPairs) {
 
-            clearInterval(timer);
-
-            document.getElementById("winMessage").style.display = "block";
-
-            document.getElementById("winStats").textContent =
-                `You completed the game in ${moves} moves and ${document.getElementById("timer").textContent}! 🏆`;
+            levelComplete();
 
         }
 
@@ -401,12 +584,222 @@ function checkMatch() {
 
             lockBoard = false;
 
-        }, 800);
+        }, 750);
 
     }
 
 }
 
+
+function calculateScore() {
+
+    /*
+    Higher level = more base points.
+    Fewer moves and less time = higher score.
+    */
+
+    const baseScore =
+        level * 1000;
+
+    const movePenalty =
+        moves * 25;
+
+    const timePenalty =
+        seconds * 2;
+
+    const finalScore =
+        Math.max(
+            100,
+            baseScore -
+            movePenalty -
+            timePenalty
+        );
+
+    return finalScore;
+
+}
+
+
+function levelComplete() {
+
+    clearInterval(timer);
+
+    const score =
+        calculateScore();
+
+    document.getElementById("score").textContent =
+        score;
+
+
+    if (score > highScore) {
+
+        highScore = score;
+
+        localStorage.setItem(
+            "memoryHighScore",
+            highScore
+        );
+
+        document.getElementById("highScore").textContent =
+            highScore;
+
+    }
+
+
+    const winMessage =
+        document.getElementById("winMessage");
+
+    const winTitle =
+        document.getElementById("winTitle");
+
+    const winStats =
+        document.getElementById("winStats");
+
+
+    if (level === 20) {
+
+        winTitle.textContent =
+            "👑 ULTIMATE MEMORY MASTER! 👑";
+
+        winStats.innerHTML =
+            `🎉 You conquered all 20 levels!<br><br>
+             🏆 Final Score: <b>${score}</b><br>
+             🎯 Moves: <b>${moves}</b><br>
+             ⏱️ Time: <b>${document.getElementById("timer").textContent}</b><br><br>
+             You are the TRUE MEMORY MASTER! 🧠🔥`;
+
+        document.getElementById("nextButton").style.display =
+            "none";
+
+    }
+
+    else {
+
+        winTitle.textContent =
+            "🎉 LEVEL COMPLETE!";
+
+        winStats.innerHTML =
+            `🏆 Score: <b>${score}</b><br>
+             🎯 Moves: <b>${moves}</b><br>
+             ⏱️ Time: <b>${document.getElementById("timer").textContent}</b><br><br>
+             Level ${level + 1} is ready! 🚀`;
+
+        document.getElementById("nextButton").style.display =
+            "inline-block";
+
+    }
+
+
+    winMessage.style.display =
+        "block";
+
+    createConfetti();
+
+}
+
+
+function nextLevel() {
+
+    if (level < 20) {
+
+        level++;
+
+        localStorage.setItem(
+            "memoryLevel",
+            level
+        );
+
+        startGame();
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+}
+
+
+function resetProgress() {
+
+    const confirmed =
+        confirm(
+            "Reset all 20-level progress and high score?"
+        );
+
+    if (!confirmed) return;
+
+
+    level = 1;
+
+    highScore = 0;
+
+    localStorage.removeItem(
+        "memoryLevel"
+    );
+
+    localStorage.removeItem(
+        "memoryHighScore"
+    );
+
+    startGame();
+
+}
+
+
+function createConfetti() {
+
+    const symbols = [
+        "🎉","✨","⭐","🎊","🏆",
+        "🔥","💥"
+    ];
+
+
+    for (let i = 0; i < 60; i++) {
+
+        const confetti =
+            document.createElement("div");
+
+        confetti.classList.add(
+            "confetti"
+        );
+
+        confetti.textContent =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+        confetti.style.fontSize =
+            Math.random() * 20 + 15 + "px";
+
+        confetti.style.animationDuration =
+            Math.random() * 2 + 2 + "s";
+
+
+        document.body.appendChild(
+            confetti
+        );
+
+
+        setTimeout(() => {
+
+            confetti.remove();
+
+        }, 4000);
+
+    }
+
+}
+
+
+updateLevelUI();
 
 startGame();
 
