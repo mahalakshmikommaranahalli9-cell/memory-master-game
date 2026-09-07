@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Memory booster ⚡ Memory Challenge</title>
+<title>MEMORYVERSE 🧠 | The Ultimate Memory Challenge</title>
 
 <style>
 * {
@@ -35,7 +35,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ---------------- START SCREEN ---------------- */
+/* START SCREEN */
 
 .start-screen {
     min-height: 90vh;
@@ -78,6 +78,11 @@ body {
     color: var(--cyan);
 }
 
+.start-card h2 {
+    margin-bottom: 20px;
+    color: #e4e4f2;
+}
+
 .start-card p {
     color: #c5c5d8;
     line-height: 1.6;
@@ -103,7 +108,7 @@ body {
     box-shadow: 0 0 15px rgba(0,247,255,0.3);
 }
 
-/* ---------------- BUTTONS ---------------- */
+/* BUTTONS */
 
 button {
     border: none;
@@ -113,7 +118,12 @@ button {
     font-weight: bold;
     padding: 14px 24px;
     border-radius: 30px;
-    background: linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));
+    background: linear-gradient(
+        135deg,
+        var(--cyan),
+        var(--purple),
+        var(--pink)
+    );
     transition: 0.3s;
 }
 
@@ -127,7 +137,7 @@ button:hover {
     border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* ---------------- GAME SCREEN ---------------- */
+/* GAME SCREEN */
 
 .game-container {
     width: 100%;
@@ -164,7 +174,7 @@ button:hover {
     color: var(--cyan);
 }
 
-/* ---------------- LEVEL INFO ---------------- */
+/* LEVEL INFO */
 
 .level-info,
 .stats {
@@ -208,11 +218,15 @@ button:hover {
 .progress-bar {
     height: 100%;
     width: 5%;
-    background: linear-gradient(90deg, var(--cyan), var(--pink));
+    background: linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--pink)
+    );
     transition: width 0.5s;
 }
 
-/* ---------------- GAME BOARD ---------------- */
+/* GAME BOARD */
 
 .game-board {
     max-width: 680px;
@@ -250,21 +264,25 @@ button:hover {
     align-items: center;
     border-radius: 15px;
     backface-visibility: hidden;
-    font-size: 1.4rem;
+    font-size: 2rem;
     padding: 8px;
     text-align: center;
 }
 
 .card-front {
-    background: linear-gradient(135deg, #17173a, #34348c);
+    background:
+        linear-gradient(
+            135deg,
+            #17173a,
+            #34348c
+        );
     border: 1px solid rgba(0,247,255,0.35);
 }
 
 .card-front::after {
-    content: "</>";
+    content: "❓";
     color: var(--cyan);
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 2rem;
 }
 
 .card-back {
@@ -281,11 +299,13 @@ button:hover {
 
 @keyframes matchPulse {
     50% {
-        transform: rotateY(180deg) scale(1.12);
+        transform:
+            rotateY(180deg)
+            scale(1.12);
     }
 }
 
-/* ---------------- CONTROLS ---------------- */
+/* CONTROLS */
 
 .controls {
     margin-top: 25px;
@@ -295,7 +315,7 @@ button:hover {
     flex-wrap: wrap;
 }
 
-/* ---------------- LEVEL MAP ---------------- */
+/* LEVEL MAP */
 
 .level-map {
     margin: 30px auto;
@@ -334,10 +354,15 @@ button:hover {
 }
 
 .level-btn.completed {
-    background: linear-gradient(135deg, #00a86b, #00d084);
+    background:
+        linear-gradient(
+            135deg,
+            #00a86b,
+            #00d084
+        );
 }
 
-/* ---------------- ACHIEVEMENTS ---------------- */
+/* ACHIEVEMENTS */
 
 .achievements {
     margin: 30px auto;
@@ -372,7 +397,7 @@ button:hover {
     color: var(--yellow);
 }
 
-/* ---------------- WIN ---------------- */
+/* WIN MESSAGE */
 
 .win-message {
     display: none;
@@ -389,7 +414,7 @@ button:hover {
     margin-bottom: 12px;
 }
 
-/* ---------------- CONFETTI ---------------- */
+/* CONFETTI */
 
 .confetti {
     position: fixed;
@@ -401,12 +426,14 @@ button:hover {
 
 @keyframes fall {
     to {
-        transform: translateY(110vh) rotate(720deg);
+        transform:
+            translateY(110vh)
+            rotate(720deg);
         opacity: 0;
     }
 }
 
-/* ---------------- MOBILE ---------------- */
+/* MOBILE */
 
 @media (max-width: 650px) {
 
@@ -433,11 +460,12 @@ button:hover {
 
     .card-front,
     .card-back {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .level-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns:
+            repeat(4, 1fr);
     }
 
     .achievement-grid {
@@ -448,6 +476,7 @@ button:hover {
         min-width: 100px;
     }
 }
+
 </style>
 </head>
 
@@ -455,28 +484,40 @@ button:hover {
 
 <!-- START SCREEN -->
 
-<section class="start-screen" id="startScreen">
+<section
+    class="start-screen"
+    id="startScreen"
+>
 
     <div class="start-card">
 
-        <div class="logo">⚡🧠⚡</div>
+        <div class="logo">🧠⚡🧠</div>
 
-        <h1>CODE <span class="highlight">BLASTER</span></h1>
+        <h1>
+            <span class="highlight">
+                MEMORY
+            </span>VERSE
+        </h1>
 
-        <h2>MEMORY CHALLENGE</h2>
+        <h2>
+            THE ULTIMATE MEMORY CHALLENGE
+        </h2>
 
         <p>
-            Welcome, Developer! 💻<br>
-            Test your coding memory, unlock 20 levels,
-            earn achievements and become the
-            <b>Ultimate Developer 👑</b>
+            Welcome, Player! 🎮<br>
+            Test your memory, unlock
+            20 exciting levels, earn
+            achievements and become the
+            <b>
+                Ultimate Memory Master 👑
+            </b>
         </p>
 
         <input
             type="text"
             id="playerName"
             class="name-input"
-            placeholder="Enter your developer name..."
+            placeholder="Enter your name..."
             maxlength="20"
         >
 
@@ -493,76 +534,144 @@ button:hover {
 
 <!-- GAME SCREEN -->
 
-<main class="game-container" id="gameContainer">
+<main
+    class="game-container"
+    id="gameContainer"
+>
 
     <header class="game-header">
 
-        <h1>⚡ CODE BLASTER</h1>
+        <h1>
+            🧠 MEMORYVERSE
+        </h1>
 
         <p class="subtitle">
-            Memory Challenge • 20 Levels • Developer Mode 💻
+            The Ultimate Memory Challenge
+            • 20 Levels •
+            Can You Conquer Them All? ⚡
         </p>
 
     </header>
 
 
     <div class="player-banner">
-        Developer: <strong id="displayName">Player</strong>
+
+        Player:
+        <strong id="displayName">
+            Player
+        </strong>
+
     </div>
 
+
+    <!-- LEVEL INFO -->
 
     <div class="level-info">
 
         <div class="info-box">
+
             <small>LEVEL</small>
-            <span id="level">1</span>
+
+            <span id="level">
+                1
+            </span>
+
         </div>
 
+
         <div class="info-box">
+
             <small>RANK</small>
-            <span id="rank">Hello World 👋</span>
+
+            <span id="rank">
+                Beginner 🌱
+            </span>
+
         </div>
 
+
         <div class="info-box">
+
             <small>HIGH SCORE</small>
-            <span id="highScore">0</span>
+
+            <span id="highScore">
+                0
+            </span>
+
         </div>
 
     </div>
 
 
     <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
+
+        <div
+            class="progress-bar"
+            id="progressBar"
+        ></div>
+
     </div>
 
+
+    <!-- STATS -->
 
     <div class="stats">
 
         <div class="info-box">
+
             <small>MOVES</small>
-            <span id="moves">0</span>
+
+            <span id="moves">
+                0
+            </span>
+
         </div>
 
+
         <div class="info-box">
+
             <small>TIME</small>
-            <span id="timer">00:00</span>
+
+            <span id="timer">
+                00:00
+            </span>
+
         </div>
 
+
         <div class="info-box">
+
             <small>SCORE</small>
-            <span id="score">0</span>
+
+            <span id="score">
+                0
+            </span>
+
         </div>
 
+
         <div class="info-box">
+
             <small>MATCHES</small>
-            <span id="matches">0 / 0</span>
+
+            <span id="matches">
+                0 / 0
+            </span>
+
         </div>
 
     </div>
 
 
-    <section class="game-board" id="gameBoard"></section>
+    <!-- GAME BOARD -->
 
+    <section
+        class="game-board"
+        id="gameBoard"
+    ></section>
+
+
+    <!-- CONTROLS -->
 
     <div class="controls">
 
@@ -570,11 +679,17 @@ button:hover {
             🔄 Restart Level
         </button>
 
-        <button class="secondary-btn" onclick="showLevelMap()">
+        <button
+            class="secondary-btn"
+            onclick="showLevelMap()"
+        >
             🗺️ Levels
         </button>
 
-        <button class="secondary-btn" onclick="resetProgress()">
+        <button
+            class="secondary-btn"
+            onclick="resetProgress()"
+        >
             🗑️ Reset
         </button>
 
@@ -583,11 +698,20 @@ button:hover {
 
     <!-- LEVEL MAP -->
 
-    <section class="level-map" id="levelMap" style="display:none">
+    <section
+        class="level-map"
+        id="levelMap"
+        style="display:none"
+    >
 
-        <h2>🗺️ Developer Journey</h2>
+        <h2>
+            🗺️ Memory Journey
+        </h2>
 
-        <div class="level-grid" id="levelGrid"></div>
+        <div
+            class="level-grid"
+            id="levelGrid"
+        ></div>
 
     </section>
 
@@ -596,28 +720,77 @@ button:hover {
 
     <section class="achievements">
 
-        <h2>🏅 Developer Achievements</h2>
+        <h2>
+            🏅 Memory Achievements
+        </h2>
+
 
         <div class="achievement-grid">
 
-            <div class="achievement" id="speedAchievement">
-                <h3>⚡ Speed Demon</h3>
-                <p>Complete a level in under 30 seconds.</p>
+
+            <div
+                class="achievement"
+                id="speedAchievement"
+            >
+
+                <h3>
+                    ⚡ Speed Demon
+                </h3>
+
+                <p>
+                    Complete a level
+                    in under 30 seconds.
+                </p>
+
             </div>
 
-            <div class="achievement" id="perfectAchievement">
-                <h3>🧠 Perfect Memory</h3>
-                <p>Complete a level using only perfect pair attempts.</p>
+
+            <div
+                class="achievement"
+                id="perfectAchievement"
+            >
+
+                <h3>
+                    🧠 Perfect Memory
+                </h3>
+
+                <p>
+                    Complete a level
+                    using only perfect attempts.
+                </p>
+
             </div>
 
-            <div class="achievement" id="warriorAchievement">
-                <h3>🔥 Code Warrior</h3>
-                <p>Complete Level 10.</p>
+
+            <div
+                class="achievement"
+                id="warriorAchievement"
+            >
+
+                <h3>
+                    🔥 Memory Warrior
+                </h3>
+
+                <p>
+                    Complete Level 10.
+                </p>
+
             </div>
 
-            <div class="achievement" id="ultimateAchievement">
-                <h3>👑 Ultimate Developer</h3>
-                <p>Conquer all 20 levels.</p>
+
+            <div
+                class="achievement"
+                id="ultimateAchievement"
+            >
+
+                <h3>
+                    👑 Ultimate Memory Master
+                </h3>
+
+                <p>
+                    Conquer all 20 levels.
+                </p>
+
             </div>
 
         </div>
@@ -627,15 +800,24 @@ button:hover {
 
     <!-- WIN MESSAGE -->
 
-    <section class="win-message" id="winMessage">
+    <section
+        class="win-message"
+        id="winMessage"
+    >
 
-        <h2 id="winTitle">🎉 LEVEL COMPLETE!</h2>
+        <h2 id="winTitle">
+            🎉 LEVEL COMPLETE!
+        </h2>
 
         <p id="winStats"></p>
 
+
         <div class="controls">
 
-            <button id="nextButton" onclick="nextLevel()">
+            <button
+                id="nextButton"
+                onclick="nextLevel()"
+            >
                 ➡️ Next Level
             </button>
 
@@ -648,97 +830,154 @@ button:hover {
 
 <script>
 
-/* ---------------- GAME DATA ---------------- */
+/* MEMORYVERSE CARD DATA */
 
-const codingCards = [
-    "HTML", "CSS", "JavaScript", "Python",
-    "Git", "GitHub", "AI", "API",
-    "Bug 🐛", "Debug 🔧", "Code 💻",
-    "Logic 🧩", "Cloud ☁️", "Linux 🐧",
-    "SQL", "JSON", "React ⚛️",
-    "Node.js", "Java ☕", "C++"
+const memoryCards = [
+
+    "🚀",
+    "🤖",
+    "🎮",
+    "💻",
+    "⚡",
+    "🧠",
+    "🌟",
+    "🎯",
+    "🐱",
+    "🦁",
+    "🦄",
+    "🌈",
+    "🔥",
+    "👾",
+    "🎵",
+    "🏆",
+    "👑",
+    "🛸",
+    "🎸",
+    "🎲"
+
 ];
 
 
-/* ---------------- SAVED DATA ---------------- */
+/* SAVED DATA */
 
 let playerName =
-    localStorage.getItem("codeBlasterPlayer") || "";
+    localStorage.getItem(
+        "memoryVersePlayer"
+    ) || "";
+
 
 let unlockedLevel =
-    Number(localStorage.getItem("codeBlasterUnlocked")) || 1;
+    Number(
+        localStorage.getItem(
+            "memoryVerseUnlocked"
+        )
+    ) || 1;
+
 
 let currentLevel =
-    Number(localStorage.getItem("codeBlasterLevel")) || 1;
+    Number(
+        localStorage.getItem(
+            "memoryVerseLevel"
+        )
+    ) || 1;
+
 
 let highScore =
-    Number(localStorage.getItem("codeBlasterHighScore")) || 0;
+    Number(
+        localStorage.getItem(
+            "memoryVerseHighScore"
+        )
+    ) || 0;
+
 
 let achievements =
     JSON.parse(
-        localStorage.getItem("codeBlasterAchievements")
+        localStorage.getItem(
+            "memoryVerseAchievements"
+        )
     ) || {
+
         speed: false,
         perfect: false,
         warrior: false,
         ultimate: false
+
     };
 
 
-/* ---------------- GAME VARIABLES ---------------- */
+/* GAME VARIABLES */
 
 let cards = [];
+
 let flippedCards = [];
+
 let moves = 0;
+
 let matches = 0;
+
 let seconds = 0;
+
 let timer;
+
 let gameStarted = false;
+
 let lockBoard = false;
+
 let currentPairs = 4;
 
 
-/* ---------------- START GAME ---------------- */
+/* ENTER GAME */
 
 function enterGame() {
 
     const input =
-        document.getElementById("playerName");
+        document.getElementById(
+            "playerName"
+        );
+
 
     const enteredName =
         input.value.trim();
 
+
     if (enteredName) {
 
-        playerName = enteredName;
+        playerName =
+            enteredName;
+
 
         localStorage.setItem(
-            "codeBlasterPlayer",
+            "memoryVersePlayer",
             playerName
         );
 
     }
 
+
     if (!playerName) {
 
-        playerName = "Developer";
+        playerName =
+            "Player";
 
     }
 
 
     document.getElementById(
         "displayName"
-    ).textContent = playerName;
+    ).textContent =
+        playerName;
 
 
     document.getElementById(
         "startScreen"
-    ).style.display = "none";
+    ).style.display =
+        "none";
 
 
     document.getElementById(
         "gameContainer"
-    ).style.display = "block";
+    ).style.display =
+        "block";
 
 
     updateAchievements();
@@ -748,96 +987,149 @@ function enterGame() {
 }
 
 
-/* ---------------- RANK ---------------- */
+/* RANK SYSTEM */
 
 function getRank() {
 
-    if (currentLevel <= 2)
-        return "Hello World 👋";
+    if (
+        currentLevel <= 2
+    )
+        return "Beginner 🌱";
 
-    if (currentLevel <= 5)
-        return "Code Rookie 💻";
 
-    if (currentLevel <= 9)
-        return "Logic Builder 🧩";
+    if (
+        currentLevel <= 5
+    )
+        return "Memory Rookie 🎮";
 
-    if (currentLevel <= 13)
-        return "Code Warrior 🔥";
 
-    if (currentLevel <= 17)
-        return "Tech Ninja 🥷";
+    if (
+        currentLevel <= 9
+    )
+        return "Mind Explorer 🧩";
 
-    if (currentLevel <= 19)
-        return "Code Blaster ⚡";
 
-    return "Ultimate Developer 👑";
+    if (
+        currentLevel <= 13
+    )
+        return "Memory Warrior 🔥";
+
+
+    if (
+        currentLevel <= 17
+    )
+        return "Mind Ninja 🥷";
+
+
+    if (
+        currentLevel <= 19
+    )
+        return "Memory Legend ⚡";
+
+
+    return "Ultimate Master 👑";
+
 }
 
 
-/* ---------------- PAIRS ---------------- */
+/* PAIRS PER LEVEL */
 
 function getPairs() {
 
-    if (currentLevel <= 5) return 4;
-    if (currentLevel <= 10) return 6;
-    if (currentLevel <= 15) return 8;
+    if (
+        currentLevel <= 5
+    )
+        return 4;
+
+
+    if (
+        currentLevel <= 10
+    )
+        return 6;
+
+
+    if (
+        currentLevel <= 15
+    )
+        return 8;
+
 
     return 10;
+
 }
 
 
-/* ---------------- SHUFFLE ---------------- */
+/* SHUFFLE */
 
 function shuffle(array) {
 
     return [...array].sort(
-        () => Math.random() - 0.5
+        () =>
+            Math.random() - 0.5
     );
 
 }
 
 
-/* ---------------- UI ---------------- */
+/* UPDATE UI */
 
 function updateUI() {
 
     document.getElementById(
         "level"
-    ).textContent = currentLevel;
+    ).textContent =
+        currentLevel;
+
 
     document.getElementById(
         "rank"
-    ).textContent = getRank();
+    ).textContent =
+        getRank();
+
 
     document.getElementById(
         "highScore"
-    ).textContent = highScore;
+    ).textContent =
+        highScore;
 
 
     document.getElementById(
         "progressBar"
     ).style.width =
-        `${(currentLevel / 20) * 100}%`;
+        `${
+            (currentLevel / 20) *
+            100
+        }%`;
 
 }
 
 
-/* ---------------- START LEVEL ---------------- */
+/* START GAME */
 
 function startGame() {
 
     clearInterval(timer);
 
-    currentPairs = getPairs();
+
+    currentPairs =
+        getPairs();
+
 
     const selectedCards =
-        shuffle(codingCards)
-        .slice(0, currentPairs);
+        shuffle(memoryCards)
+        .slice(
+            0,
+            currentPairs
+        );
+
 
     cards =
         shuffle([
+
             ...selectedCards,
+
             ...selectedCards
+
         ]);
 
 
@@ -859,15 +1151,21 @@ function startGame() {
 
     document.getElementById(
         "moves"
-    ).textContent = "0";
+    ).textContent =
+        "0";
+
 
     document.getElementById(
         "timer"
-    ).textContent = "00:00";
+    ).textContent =
+        "00:00";
+
 
     document.getElementById(
         "score"
-    ).textContent = "0";
+    ).textContent =
+        "0";
+
 
     document.getElementById(
         "matches"
@@ -877,7 +1175,8 @@ function startGame() {
 
     document.getElementById(
         "winMessage"
-    ).style.display = "none";
+    ).style.display =
+        "none";
 
 
     const board =
@@ -885,78 +1184,109 @@ function startGame() {
             "gameBoard"
         );
 
-    board.innerHTML = "";
+
+    board.innerHTML =
+        "";
 
 
-    cards.forEach(cardName => {
+    cards.forEach(
+        cardValue => {
 
-        const card =
-            document.createElement("div");
-
-        card.classList.add("card");
-
-        card.dataset.value =
-            cardName;
+            const card =
+                document.createElement(
+                    "div"
+                );
 
 
-        card.innerHTML = `
+            card.classList.add(
+                "card"
+            );
 
-            <div class="card-inner">
 
-                <div class="card-front"></div>
+            card.dataset.value =
+                cardValue;
 
-                <div class="card-back">
-                    ${cardName}
+
+            card.innerHTML = `
+
+                <div class="card-inner">
+
+                    <div class="card-front"></div>
+
+                    <div class="card-back">
+                        ${cardValue}
+                    </div>
+
                 </div>
 
-            </div>
-
-        `;
+            `;
 
 
-        card.addEventListener(
-            "click",
-            flipCard
-        );
+            card.addEventListener(
+                "click",
+                flipCard
+            );
 
 
-        board.appendChild(card);
+            board.appendChild(
+                card
+            );
 
-    });
+        }
+    );
 
 }
 
 
-/* ---------------- FLIP ---------------- */
+/* FLIP CARD */
 
 function flipCard() {
 
     if (
+
         lockBoard ||
-        this.classList.contains("flipped") ||
-        this.classList.contains("matched")
-    ) return;
+
+        this.classList.contains(
+            "flipped"
+        ) ||
+
+        this.classList.contains(
+            "matched"
+        )
+
+    )
+        return;
 
 
     if (!gameStarted) {
 
-        gameStarted = true;
+        gameStarted =
+            true;
+
 
         timer =
-            setInterval(() => {
+            setInterval(
+                () => {
 
-                seconds++;
+                    seconds++;
 
-                updateTimer();
+                    updateTimer();
 
-            }, 1000);
+                },
+                1000
+            );
 
     }
 
 
-    this.classList.add("flipped");
+    this.classList.add(
+        "flipped"
+    );
 
-    flippedCards.push(this);
+
+    flippedCards.push(
+        this
+    );
 
 
     if (
@@ -965,9 +1295,12 @@ function flipCard() {
 
         moves++;
 
+
         document.getElementById(
             "moves"
-        ).textContent = moves;
+        ).textContent =
+            moves;
+
 
         checkMatch();
 
@@ -976,12 +1309,15 @@ function flipCard() {
 }
 
 
-/* ---------------- TIMER ---------------- */
+/* TIMER */
 
 function updateTimer() {
 
     const minutes =
-        Math.floor(seconds / 60);
+        Math.floor(
+            seconds / 60
+        );
+
 
     const secs =
         seconds % 60;
@@ -995,24 +1331,32 @@ function updateTimer() {
 }
 
 
-/* ---------------- MATCH ---------------- */
+/* CHECK MATCH */
 
 function checkMatch() {
 
-    lockBoard = true;
+    lockBoard =
+        true;
 
-    const [card1, card2] =
+
+    const [
+        card1,
+        card2
+    ] =
         flippedCards;
 
 
     if (
+
         card1.dataset.value ===
         card2.dataset.value
+
     ) {
 
         card1.classList.remove(
             "flipped"
         );
+
 
         card2.classList.remove(
             "flipped"
@@ -1022,6 +1366,7 @@ function checkMatch() {
         card1.classList.add(
             "matched"
         );
+
 
         card2.classList.add(
             "matched"
@@ -1037,13 +1382,17 @@ function checkMatch() {
             `${matches} / ${currentPairs}`;
 
 
-        flippedCards = [];
+        flippedCards =
+            [];
 
-        lockBoard = false;
+
+        lockBoard =
+            false;
 
 
         if (
-            matches === currentPairs
+            matches ===
+            currentPairs
         ) {
 
             levelComplete();
@@ -1054,56 +1403,76 @@ function checkMatch() {
 
     else {
 
-        setTimeout(() => {
+        setTimeout(
+            () => {
 
-            card1.classList.remove(
-                "flipped"
-            );
+                card1.classList.remove(
+                    "flipped"
+                );
 
-            card2.classList.remove(
-                "flipped"
-            );
 
-            flippedCards = [];
+                card2.classList.remove(
+                    "flipped"
+                );
 
-            lockBoard = false;
 
-        }, 750);
+                flippedCards =
+                    [];
+
+
+                lockBoard =
+                    false;
+
+            },
+            750
+        );
 
     }
 
 }
 
 
-/* ---------------- SCORE ---------------- */
+/* SCORE */
 
 function calculateScore() {
 
     const base =
-        currentLevel * 1000;
+        currentLevel *
+        1000;
+
 
     const movePenalty =
-        moves * 30;
+        moves *
+        30;
+
 
     const timePenalty =
-        seconds * 3;
+        seconds *
+        3;
 
 
     return Math.max(
+
         100,
+
         base -
+
         movePenalty -
+
         timePenalty
+
     );
 
 }
 
 
-/* ---------------- LEVEL COMPLETE ---------------- */
+/* LEVEL COMPLETE */
 
 function levelComplete() {
 
-    clearInterval(timer);
+    clearInterval(
+        timer
+    );
 
 
     const score =
@@ -1117,13 +1486,16 @@ function levelComplete() {
 
 
     if (
-        score > highScore
+        score >
+        highScore
     ) {
 
-        highScore = score;
+        highScore =
+            score;
+
 
         localStorage.setItem(
-            "codeBlasterHighScore",
+            "memoryVerseHighScore",
             highScore
         );
 
@@ -1131,15 +1503,22 @@ function levelComplete() {
 
 
     if (
-        currentLevel >= unlockedLevel &&
-        currentLevel < 20
+
+        currentLevel >=
+        unlockedLevel &&
+
+        currentLevel <
+        20
+
     ) {
 
         unlockedLevel =
-            currentLevel + 1;
+            currentLevel +
+            1;
+
 
         localStorage.setItem(
-            "codeBlasterUnlocked",
+            "memoryVerseUnlocked",
             unlockedLevel
         );
 
@@ -1159,7 +1538,8 @@ function levelComplete() {
 
 
     if (
-        moves === currentPairs
+        moves ===
+        currentPairs
     ) {
 
         achievements.perfect =
@@ -1169,7 +1549,8 @@ function levelComplete() {
 
 
     if (
-        currentLevel >= 10
+        currentLevel >=
+        10
     ) {
 
         achievements.warrior =
@@ -1179,7 +1560,8 @@ function levelComplete() {
 
 
     if (
-        currentLevel === 20
+        currentLevel ===
+        20
     ) {
 
         achievements.ultimate =
@@ -1189,10 +1571,13 @@ function levelComplete() {
 
 
     localStorage.setItem(
-        "codeBlasterAchievements",
+
+        "memoryVerseAchievements",
+
         JSON.stringify(
             achievements
         )
+
     );
 
 
@@ -1204,6 +1589,7 @@ function levelComplete() {
             "winTitle"
         );
 
+
     const stats =
         document.getElementById(
             "winStats"
@@ -1211,20 +1597,27 @@ function levelComplete() {
 
 
     if (
-        currentLevel === 20
+        currentLevel ===
+        20
     ) {
 
         title.textContent =
-            "👑 ULTIMATE DEVELOPER UNLOCKED!";
+            "👑 ULTIMATE MEMORY MASTER!";
 
 
         stats.innerHTML =
-            `⚡ Congratulations <b>${playerName}</b>!<br><br>
-             You conquered all 20 Code Blaster challenges! 💻<br><br>
-             🏆 Score: <b>${score}</b><br>
-             🎯 Moves: <b>${moves}</b><br>
-             ⏱️ Time: <b>${document.getElementById("timer").textContent}</b><br><br>
-             YOU ARE AN ULTIMATE DEVELOPER 👑🔥`;
+
+            `🧠 Congratulations <b>${playerName}</b>!<br><br>
+
+            You conquered all 20 MemoryVerse challenges! 🎉<br><br>
+
+            🏆 Score: <b>${score}</b><br>
+
+            🎯 Moves: <b>${moves}</b><br>
+
+            ⏱️ Time: <b>${document.getElementById("timer").textContent}</b><br><br>
+
+            YOU ARE THE ULTIMATE MEMORY MASTER 👑🔥`;
 
 
         document.getElementById(
@@ -1241,11 +1634,16 @@ function levelComplete() {
 
 
         stats.innerHTML =
-            `Great work, <b>${playerName}</b>! 💻<br><br>
-             🏆 Score: <b>${score}</b><br>
-             🎯 Moves: <b>${moves}</b><br>
-             ⏱️ Time: <b>${document.getElementById("timer").textContent}</b><br><br>
-             Level ${currentLevel + 1} unlocked! 🔓⚡`;
+
+            `Amazing work, <b>${playerName}</b>! 🧠<br><br>
+
+            🏆 Score: <b>${score}</b><br>
+
+            🎯 Moves: <b>${moves}</b><br>
+
+            ⏱️ Time: <b>${document.getElementById("timer").textContent}</b><br><br>
+
+            Level ${currentLevel + 1} unlocked! 🔓⚡`;
 
 
         document.getElementById(
@@ -1269,18 +1667,20 @@ function levelComplete() {
 }
 
 
-/* ---------------- NEXT LEVEL ---------------- */
+/* NEXT LEVEL */
 
 function nextLevel() {
 
     if (
-        currentLevel < 20
+        currentLevel <
+        20
     ) {
 
         currentLevel++;
 
+
         localStorage.setItem(
-            "codeBlasterLevel",
+            "memoryVerseLevel",
             currentLevel
         );
 
@@ -1289,8 +1689,12 @@ function nextLevel() {
 
 
         window.scrollTo({
+
             top: 0,
-            behavior: "smooth"
+
+            behavior:
+                "smooth"
+
         });
 
     }
@@ -1298,7 +1702,7 @@ function nextLevel() {
 }
 
 
-/* ---------------- LEVEL MAP ---------------- */
+/* LEVEL MAP */
 
 function showLevelMap() {
 
@@ -1309,9 +1713,17 @@ function showLevelMap() {
 
 
     map.style.display =
-        map.style.display === "none"
-        ? "block"
-        : "none";
+
+        map.style.display ===
+        "none"
+
+        ?
+
+        "block"
+
+        :
+
+        "none";
 
 
     buildLevelMap();
@@ -1326,13 +1738,19 @@ function buildLevelMap() {
             "levelGrid"
         );
 
-    grid.innerHTML = "";
+
+    grid.innerHTML =
+        "";
 
 
     for (
+
         let i = 1;
+
         i <= 20;
+
         i++
+
     ) {
 
         const button =
@@ -1347,15 +1765,18 @@ function buildLevelMap() {
 
 
         if (
-            i > unlockedLevel
+            i >
+            unlockedLevel
         ) {
 
             button.classList.add(
                 "locked"
             );
 
+
             button.innerHTML =
                 `🔒<br>Level ${i}`;
+
 
             button.disabled =
                 true;
@@ -1365,7 +1786,8 @@ function buildLevelMap() {
         else {
 
             if (
-                i < unlockedLevel
+                i <
+                unlockedLevel
             ) {
 
                 button.classList.add(
@@ -1376,7 +1798,8 @@ function buildLevelMap() {
 
 
             if (
-                i === currentLevel
+                i ===
+                currentLevel
             ) {
 
                 button.classList.add(
@@ -1393,11 +1816,12 @@ function buildLevelMap() {
             button.onclick =
                 () => {
 
-                    currentLevel = i;
+                    currentLevel =
+                        i;
 
 
                     localStorage.setItem(
-                        "codeBlasterLevel",
+                        "memoryVerseLevel",
                         currentLevel
                     );
 
@@ -1424,7 +1848,7 @@ function buildLevelMap() {
 }
 
 
-/* ---------------- ACHIEVEMENTS ---------------- */
+/* ACHIEVEMENTS */
 
 function updateAchievements() {
 
@@ -1447,48 +1871,70 @@ function updateAchievements() {
 
     Object.keys(
         achievementElements
-    ).forEach(key => {
+    ).forEach(
+        key => {
 
-        const element =
-            document.getElementById(
-                achievementElements[key]
-            );
+            const element =
+                document.getElementById(
+                    achievementElements[key]
+                );
 
 
-        if (
-            achievements[key]
-        ) {
+            if (
+                achievements[key]
+            ) {
 
-            element.classList.add(
-                "unlocked"
-            );
+                element.classList.add(
+                    "unlocked"
+                );
+
+            }
+
+            else {
+
+                element.classList.remove(
+                    "unlocked"
+                );
+
+            }
 
         }
-
-    });
+    );
 
 }
 
 
-/* ---------------- CONFETTI ---------------- */
+/* CONFETTI */
 
 function createConfetti() {
 
     const symbols = [
-        "⚡",
-        "💻",
+
+        "🧠",
+
         "🎉",
+
         "✨",
+
         "🏆",
+
         "🔥",
-        "👑"
+
+        "👑",
+
+        "⚡"
+
     ];
 
 
     for (
+
         let i = 0;
+
         i < 70;
+
         i++
+
     ) {
 
         const item =
@@ -1503,21 +1949,26 @@ function createConfetti() {
 
 
         item.textContent =
+
             symbols[
                 Math.floor(
+
                     Math.random() *
                     symbols.length
+
                 )
             ];
 
 
         item.style.left =
+
             Math.random() *
             100 +
             "vw";
 
 
         item.style.fontSize =
+
             (
                 Math.random() *
                 20 +
@@ -1527,6 +1978,7 @@ function createConfetti() {
 
 
         item.style.animationDuration =
+
             (
                 Math.random() *
                 2 +
@@ -1550,47 +2002,62 @@ function createConfetti() {
 }
 
 
-/* ---------------- RESET ---------------- */
+/* RESET */
 
 function resetProgress() {
 
     const answer =
         confirm(
-            "Reset all Code Blaster progress?"
+            "Reset all MemoryVerse progress?"
         );
 
 
-    if (!answer) return;
+    if (!answer)
+        return;
 
 
     localStorage.removeItem(
-        "codeBlasterUnlocked"
+        "memoryVerseUnlocked"
     );
+
 
     localStorage.removeItem(
-        "codeBlasterLevel"
+        "memoryVerseLevel"
     );
+
 
     localStorage.removeItem(
-        "codeBlasterHighScore"
+        "memoryVerseHighScore"
     );
+
 
     localStorage.removeItem(
-        "codeBlasterAchievements"
+        "memoryVerseAchievements"
     );
 
 
-    unlockedLevel = 1;
+    unlockedLevel =
+        1;
 
-    currentLevel = 1;
 
-    highScore = 0;
+    currentLevel =
+        1;
+
+
+    highScore =
+        0;
+
 
     achievements = {
+
         speed: false,
+
         perfect: false,
+
         warrior: false,
+
         ultimate: false
+
     };
 
 
@@ -1601,11 +2068,12 @@ function resetProgress() {
 }
 
 
-/* ---------------- INITIAL NAME ---------------- */
+/* INITIAL PLAYER NAME */
 
 document.getElementById(
     "playerName"
-).value = playerName;
+).value =
+    playerName;
 
 </script>
 
