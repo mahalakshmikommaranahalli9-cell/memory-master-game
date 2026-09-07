@@ -2,6 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00f7ff">
+
+<!-- App icon -->
+<link rel="apple-touch-icon" href="icon-192.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,7 +28,19 @@
     --yellow:#ffd700;
     --panel:rgba(255,255,255,0.08);
 }
-
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js")
+            .then(() => {
+                console.log("MemoryVerse Service Worker Registered!");
+            })
+            .catch(error => {
+                console.log("Service Worker Error:", error);
+            });
+    });
+}
+</script>
 body{
     min-height:100vh;
     font-family:Arial,sans-serif;
