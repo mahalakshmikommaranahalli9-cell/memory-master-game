@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Memory Master Ultimate 🧠</title>
+<title>CODE BLASTER ⚡ Memory Challenge</title>
 
 <style>
 * {
@@ -14,33 +14,160 @@
     box-sizing: border-box;
 }
 
+:root {
+    --cyan: #00f7ff;
+    --pink: #ff00cc;
+    --purple: #7b2cff;
+    --green: #00ff9d;
+    --yellow: #ffd700;
+    --dark: #080812;
+    --panel: rgba(255,255,255,0.08);
+}
+
 body {
     min-height: 100vh;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background:
+        radial-gradient(circle at top, #25255c 0%, transparent 35%),
+        linear-gradient(135deg, #080812, #15152d, #0b0b18);
     color: white;
     padding: 20px;
+    overflow-x: hidden;
 }
+
+/* ---------------- START SCREEN ---------------- */
+
+.start-screen {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 45px 30px;
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(0,247,255,0.35);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 50px rgba(0,247,255,0.12);
+}
+
+.logo {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+.start-card h1 {
+    font-size: 3rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: var(--cyan);
+}
+
+.start-card p {
+    color: #c5c5d8;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.name-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    outline: none;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 15px;
+    background: rgba(255,255,255,0.08);
+    color: white;
+}
+
+.name-input:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 15px rgba(0,247,255,0.3);
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+button {
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 14px 24px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,247,255,0.25);
+}
+
+.secondary-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ---------------- GAME SCREEN ---------------- */
 
 .game-container {
     width: 100%;
-    max-width: 850px;
+    max-width: 900px;
     margin: auto;
     text-align: center;
+    display: none;
 }
 
-h1 {
-    font-size: 3rem;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-}
-
-.subtitle {
-    color: #b8b8d1;
+.game-header {
     margin-bottom: 20px;
 }
 
-.level-area {
+.game-header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    color: #bdbdd2;
+    margin-top: 8px;
+}
+
+.player-banner {
+    margin: 18px auto;
+    max-width: 500px;
+    padding: 12px;
+    border-radius: 14px;
+    background: var(--panel);
+    border: 1px solid rgba(0,247,255,0.2);
+}
+
+.player-banner strong {
+    color: var(--cyan);
+}
+
+/* ---------------- LEVEL INFO ---------------- */
+
+.level-info,
+.stats {
     display: flex;
     justify-content: center;
     gap: 12px;
@@ -48,81 +175,65 @@ h1 {
     margin-bottom: 18px;
 }
 
-.level-box {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 10px 18px;
-    border-radius: 12px;
-    min-width: 120px;
+.info-box {
+    min-width: 125px;
+    padding: 12px 15px;
+    border-radius: 14px;
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,0.15);
 }
 
-.level-box span {
+.info-box small {
     display: block;
-    font-size: 1.3rem;
+    color: #aaaac0;
+    margin-bottom: 5px;
+}
+
+.info-box span {
+    display: block;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #ffd700;
+    color: var(--cyan);
 }
 
 .progress-container {
-    width: 100%;
+    max-width: 650px;
+    margin: 0 auto 25px;
     height: 12px;
-    background: rgba(255,255,255,0.15);
     border-radius: 20px;
     overflow: hidden;
-    margin-bottom: 22px;
+    background: rgba(255,255,255,0.1);
 }
 
 .progress-bar {
     height: 100%;
     width: 5%;
-    background: linear-gradient(90deg, #00f7ff, #ff00cc);
+    background: linear-gradient(90deg, var(--cyan), var(--pink));
     transition: width 0.5s;
 }
 
-.stats {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 22px;
-    flex-wrap: wrap;
-}
-
-.stat-box {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 12px 20px;
-    border-radius: 12px;
-    min-width: 120px;
-}
-
-.stat-box span {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #00f7ff;
-}
+/* ---------------- GAME BOARD ---------------- */
 
 .game-board {
+    max-width: 680px;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    max-width: 650px;
-    margin: auto;
+    gap: 12px;
 }
 
 .card {
     aspect-ratio: 1 / 1;
-    position: relative;
-    cursor: pointer;
     perspective: 1000px;
+    cursor: pointer;
 }
 
 .card-inner {
     width: 100%;
     height: 100%;
     position: relative;
-    transition: transform 0.5s;
     transform-style: preserve-3d;
+    transition: transform 0.45s;
 }
 
 .card.flipped .card-inner,
@@ -133,83 +244,159 @@ h1 {
 .card-front,
 .card-back {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
+    inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
     backface-visibility: hidden;
-    font-size: 2.4rem;
+    font-size: 1.4rem;
+    padding: 8px;
+    text-align: center;
 }
 
 .card-front {
-    background: linear-gradient(135deg, #ff00cc, #333399);
-    border: 2px solid rgba(255,255,255,0.3);
+    background: linear-gradient(135deg, #17173a, #34348c);
+    border: 1px solid rgba(0,247,255,0.35);
+}
+
+.card-front::after {
+    content: "</>";
+    color: var(--cyan);
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .card-back {
-    background: white;
-    color: #222;
     transform: rotateY(180deg);
+    background: #f4f7ff;
+    color: #111;
+    font-weight: bold;
 }
 
 .card.matched .card-back {
-    background: #00ff9d;
-    animation: matched 0.5s ease;
+    background: var(--green);
+    animation: matchPulse 0.5s ease;
 }
 
-@keyframes matched {
+@keyframes matchPulse {
     50% {
         transform: rotateY(180deg) scale(1.12);
     }
 }
 
-.buttons {
+/* ---------------- CONTROLS ---------------- */
+
+.controls {
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
-    margin-top: 24px;
 }
 
-button {
-    padding: 13px 24px;
-    border: none;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    color: white;
-    background: linear-gradient(135deg, #00f7ff, #ff00cc);
-    transition: 0.3s;
+/* ---------------- LEVEL MAP ---------------- */
+
+.level-map {
+    margin: 30px auto;
+    max-width: 750px;
+    padding: 22px;
+    border-radius: 20px;
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,0.12);
 }
 
-button:hover {
-    transform: scale(1.07);
+.level-map h2 {
+    margin-bottom: 18px;
 }
+
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.level-btn {
+    min-height: 65px;
+    padding: 8px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.level-btn.locked {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: rgba(255,255,255,0.08);
+}
+
+.level-btn.current {
+    outline: 2px solid var(--cyan);
+}
+
+.level-btn.completed {
+    background: linear-gradient(135deg, #00a86b, #00d084);
+}
+
+/* ---------------- ACHIEVEMENTS ---------------- */
+
+.achievements {
+    margin: 30px auto;
+    max-width: 750px;
+    padding: 22px;
+    border-radius: 20px;
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.achievement {
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.06);
+    opacity: 0.4;
+}
+
+.achievement.unlocked {
+    opacity: 1;
+    border: 1px solid var(--yellow);
+    background: rgba(255,215,0,0.08);
+}
+
+.achievement h3 {
+    margin-bottom: 6px;
+    color: var(--yellow);
+}
+
+/* ---------------- WIN ---------------- */
 
 .win-message {
     display: none;
-    margin-top: 25px;
-    padding: 22px;
-    border-radius: 18px;
-    background: rgba(0, 255, 157, 0.15);
-    border: 1px solid #00ff9d;
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(0,255,157,0.12);
+    border: 1px solid var(--green);
 }
 
 .win-message h2 {
-    color: #00ff9d;
-    margin-bottom: 10px;
+    color: var(--green);
+    margin-bottom: 12px;
 }
+
+/* ---------------- CONFETTI ---------------- */
 
 .confetti {
     position: fixed;
-    width: 10px;
-    height: 10px;
-    top: -10px;
+    top: -30px;
     pointer-events: none;
-    animation: fall 3s linear forwards;
+    z-index: 9999;
+    animation: fall linear forwards;
 }
 
 @keyframes fall {
@@ -219,14 +406,25 @@ button:hover {
     }
 }
 
-@media (max-width: 600px) {
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 650px) {
 
     body {
         padding: 12px;
     }
 
-    h1 {
-        font-size: 2rem;
+    .start-card {
+        padding: 35px 18px;
+    }
+
+    .start-card h1 {
+        font-size: 2.1rem;
+        letter-spacing: 2px;
+    }
+
+    .game-header h1 {
+        font-size: 1.9rem;
     }
 
     .game-board {
@@ -235,12 +433,19 @@ button:hover {
 
     .card-front,
     .card-back {
-        font-size: 1.6rem;
+        font-size: 1rem;
     }
 
-    .stat-box {
-        min-width: 95px;
-        padding: 10px;
+    .level-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-box {
+        min-width: 100px;
     }
 }
 </style>
@@ -248,95 +453,239 @@ button:hover {
 
 <body>
 
-<div class="game-container">
+<!-- START SCREEN -->
 
-    <h1>🧠 MEMORY MASTER</h1>
-    <p class="subtitle">20 Levels • Flip • Remember • Match • Become the Ultimate Master 👑</p>
+<section class="start-screen" id="startScreen">
 
-    <div class="level-area">
+    <div class="start-card">
 
-        <div class="level-box">
-            LEVEL
+        <div class="logo">⚡🧠⚡</div>
+
+        <h1>CODE <span class="highlight">BLASTER</span></h1>
+
+        <h2>MEMORY CHALLENGE</h2>
+
+        <p>
+            Welcome, Developer! 💻<br>
+            Test your coding memory, unlock 20 levels,
+            earn achievements and become the
+            <b>Ultimate Developer 👑</b>
+        </p>
+
+        <input
+            type="text"
+            id="playerName"
+            class="name-input"
+            placeholder="Enter your developer name..."
+            maxlength="20"
+        >
+
+        <br>
+
+        <button onclick="enterGame()">
+            ▶ START CHALLENGE
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- GAME SCREEN -->
+
+<main class="game-container" id="gameContainer">
+
+    <header class="game-header">
+
+        <h1>⚡ CODE BLASTER</h1>
+
+        <p class="subtitle">
+            Memory Challenge • 20 Levels • Developer Mode 💻
+        </p>
+
+    </header>
+
+
+    <div class="player-banner">
+        Developer: <strong id="displayName">Player</strong>
+    </div>
+
+
+    <div class="level-info">
+
+        <div class="info-box">
+            <small>LEVEL</small>
             <span id="level">1</span>
         </div>
 
-        <div class="level-box">
-            DIFFICULTY
-            <span id="difficulty">Easy</span>
+        <div class="info-box">
+            <small>RANK</small>
+            <span id="rank">Hello World 👋</span>
         </div>
 
-        <div class="level-box">
-            HIGH SCORE
+        <div class="info-box">
+            <small>HIGH SCORE</small>
             <span id="highScore">0</span>
         </div>
 
     </div>
 
+
     <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
     </div>
 
+
     <div class="stats">
 
-        <div class="stat-box">
-            Moves
+        <div class="info-box">
+            <small>MOVES</small>
             <span id="moves">0</span>
         </div>
 
-        <div class="stat-box">
-            Time
+        <div class="info-box">
+            <small>TIME</small>
             <span id="timer">00:00</span>
         </div>
 
-        <div class="stat-box">
-            Score
+        <div class="info-box">
+            <small>SCORE</small>
             <span id="score">0</span>
         </div>
 
-        <div class="stat-box">
-            Matches
+        <div class="info-box">
+            <small>MATCHES</small>
             <span id="matches">0 / 0</span>
         </div>
 
     </div>
 
-    <div class="game-board" id="gameBoard"></div>
 
-    <div class="buttons">
+    <section class="game-board" id="gameBoard"></section>
+
+
+    <div class="controls">
 
         <button onclick="startGame()">
             🔄 Restart Level
         </button>
 
-        <button onclick="resetProgress()">
-            🗑 Reset Progress
+        <button class="secondary-btn" onclick="showLevelMap()">
+            🗺️ Levels
+        </button>
+
+        <button class="secondary-btn" onclick="resetProgress()">
+            🗑️ Reset
         </button>
 
     </div>
 
-    <div class="win-message" id="winMessage">
+
+    <!-- LEVEL MAP -->
+
+    <section class="level-map" id="levelMap" style="display:none">
+
+        <h2>🗺️ Developer Journey</h2>
+
+        <div class="level-grid" id="levelGrid"></div>
+
+    </section>
+
+
+    <!-- ACHIEVEMENTS -->
+
+    <section class="achievements">
+
+        <h2>🏅 Developer Achievements</h2>
+
+        <div class="achievement-grid">
+
+            <div class="achievement" id="speedAchievement">
+                <h3>⚡ Speed Demon</h3>
+                <p>Complete a level in under 30 seconds.</p>
+            </div>
+
+            <div class="achievement" id="perfectAchievement">
+                <h3>🧠 Perfect Memory</h3>
+                <p>Complete a level using only perfect pair attempts.</p>
+            </div>
+
+            <div class="achievement" id="warriorAchievement">
+                <h3>🔥 Code Warrior</h3>
+                <p>Complete Level 10.</p>
+            </div>
+
+            <div class="achievement" id="ultimateAchievement">
+                <h3>👑 Ultimate Developer</h3>
+                <p>Conquer all 20 levels.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WIN MESSAGE -->
+
+    <section class="win-message" id="winMessage">
+
         <h2 id="winTitle">🎉 LEVEL COMPLETE!</h2>
+
         <p id="winStats"></p>
 
-        <div class="buttons">
+        <div class="controls">
+
             <button id="nextButton" onclick="nextLevel()">
                 ➡️ Next Level
             </button>
-        </div>
-    </div>
 
-</div>
+        </div>
+
+    </section>
+
+</main>
+
 
 <script>
 
-const allEmojis = [
-    "🎮","🤖","🚀","💻","🔥","⚡","🎯","🧠",
-    "👾","🎵","🌟","🍕","🐱","🦁","🐼","🌈",
-    "🏆","👑","🎲","🎸","🚗","🛸","🦄","🍩"
+/* ---------------- GAME DATA ---------------- */
+
+const codingCards = [
+    "HTML", "CSS", "JavaScript", "Python",
+    "Git", "GitHub", "AI", "API",
+    "Bug 🐛", "Debug 🔧", "Code 💻",
+    "Logic 🧩", "Cloud ☁️", "Linux 🐧",
+    "SQL", "JSON", "React ⚛️",
+    "Node.js", "Java ☕", "C++"
 ];
 
-let level = Number(localStorage.getItem("memoryLevel")) || 1;
-let highScore = Number(localStorage.getItem("memoryHighScore")) || 0;
+
+/* ---------------- SAVED DATA ---------------- */
+
+let playerName =
+    localStorage.getItem("codeBlasterPlayer") || "";
+
+let unlockedLevel =
+    Number(localStorage.getItem("codeBlasterUnlocked")) || 1;
+
+let currentLevel =
+    Number(localStorage.getItem("codeBlasterLevel")) || 1;
+
+let highScore =
+    Number(localStorage.getItem("codeBlasterHighScore")) || 0;
+
+let achievements =
+    JSON.parse(
+        localStorage.getItem("codeBlasterAchievements")
+    ) || {
+        speed: false,
+        perfect: false,
+        warrior: false,
+        ultimate: false
+    };
+
+
+/* ---------------- GAME VARIABLES ---------------- */
 
 let cards = [];
 let flippedCards = [];
@@ -349,58 +698,131 @@ let lockBoard = false;
 let currentPairs = 4;
 
 
-function shuffle(array) {
-    return [...array].sort(() => Math.random() - 0.5);
+/* ---------------- START GAME ---------------- */
+
+function enterGame() {
+
+    const input =
+        document.getElementById("playerName");
+
+    const enteredName =
+        input.value.trim();
+
+    if (enteredName) {
+
+        playerName = enteredName;
+
+        localStorage.setItem(
+            "codeBlasterPlayer",
+            playerName
+        );
+
+    }
+
+    if (!playerName) {
+
+        playerName = "Developer";
+
+    }
+
+
+    document.getElementById(
+        "displayName"
+    ).textContent = playerName;
+
+
+    document.getElementById(
+        "startScreen"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "gameContainer"
+    ).style.display = "block";
+
+
+    updateAchievements();
+
+    startGame();
+
 }
 
 
-function getDifficulty() {
+/* ---------------- RANK ---------------- */
 
-    if (level <= 5) {
-        return "🟢 Easy";
-    }
+function getRank() {
 
-    if (level <= 10) {
-        return "🟡 Medium";
-    }
+    if (currentLevel <= 2)
+        return "Hello World 👋";
 
-    if (level <= 15) {
-        return "🟠 Hard";
-    }
+    if (currentLevel <= 5)
+        return "Code Rookie 💻";
 
-    return "🔴 Master";
+    if (currentLevel <= 9)
+        return "Logic Builder 🧩";
+
+    if (currentLevel <= 13)
+        return "Code Warrior 🔥";
+
+    if (currentLevel <= 17)
+        return "Tech Ninja 🥷";
+
+    if (currentLevel <= 19)
+        return "Code Blaster ⚡";
+
+    return "Ultimate Developer 👑";
 }
 
+
+/* ---------------- PAIRS ---------------- */
 
 function getPairs() {
 
-    /*
-    Level progression:
-    1-5   = 4 pairs
-    6-10  = 6 pairs
-    11-15 = 8 pairs
-    16-20 = 10 pairs
-    */
+    if (currentLevel <= 5) return 4;
+    if (currentLevel <= 10) return 6;
+    if (currentLevel <= 15) return 8;
 
-    if (level <= 5) return 4;
-    if (level <= 10) return 6;
-    if (level <= 15) return 8;
     return 10;
 }
 
 
-function updateLevelUI() {
+/* ---------------- SHUFFLE ---------------- */
 
-    document.getElementById("level").textContent = level;
-    document.getElementById("difficulty").textContent = getDifficulty();
-    document.getElementById("highScore").textContent = highScore;
+function shuffle(array) {
 
-    const progress = (level / 20) * 100;
+    return [...array].sort(
+        () => Math.random() - 0.5
+    );
 
-    document.getElementById("progressBar").style.width =
-        `${Math.max(5, progress)}%`;
 }
 
+
+/* ---------------- UI ---------------- */
+
+function updateUI() {
+
+    document.getElementById(
+        "level"
+    ).textContent = currentLevel;
+
+    document.getElementById(
+        "rank"
+    ).textContent = getRank();
+
+    document.getElementById(
+        "highScore"
+    ).textContent = highScore;
+
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+        `${(currentLevel / 20) * 100}%`;
+
+}
+
+
+/* ---------------- START LEVEL ---------------- */
 
 function startGame() {
 
@@ -408,67 +830,95 @@ function startGame() {
 
     currentPairs = getPairs();
 
-    const selectedEmojis =
-        shuffle(allEmojis).slice(0, currentPairs);
+    const selectedCards =
+        shuffle(codingCards)
+        .slice(0, currentPairs);
 
     cards =
-        shuffle([...selectedEmojis, ...selectedEmojis]);
+        shuffle([
+            ...selectedCards,
+            ...selectedCards
+        ]);
+
 
     flippedCards = [];
+
     moves = 0;
+
     matches = 0;
+
     seconds = 0;
+
     gameStarted = false;
+
     lockBoard = false;
 
-    updateLevelUI();
 
-    document.getElementById("moves").textContent = "0";
-    document.getElementById("timer").textContent = "00:00";
-    document.getElementById("score").textContent = "0";
+    updateUI();
 
-    document.getElementById("matches").textContent =
+
+    document.getElementById(
+        "moves"
+    ).textContent = "0";
+
+    document.getElementById(
+        "timer"
+    ).textContent = "00:00";
+
+    document.getElementById(
+        "score"
+    ).textContent = "0";
+
+    document.getElementById(
+        "matches"
+    ).textContent =
         `0 / ${currentPairs}`;
 
-    document.getElementById("winMessage").style.display = "none";
+
+    document.getElementById(
+        "winMessage"
+    ).style.display = "none";
+
 
     const board =
-        document.getElementById("gameBoard");
+        document.getElementById(
+            "gameBoard"
+        );
 
     board.innerHTML = "";
 
-    board.style.gridTemplateColumns =
-        currentPairs <= 6
-        ? "repeat(4, 1fr)"
-        : "repeat(4, 1fr)";
 
-
-    cards.forEach((emoji) => {
+    cards.forEach(cardName => {
 
         const card =
             document.createElement("div");
 
         card.classList.add("card");
 
-        card.dataset.emoji = emoji;
+        card.dataset.value =
+            cardName;
+
 
         card.innerHTML = `
 
             <div class="card-inner">
 
-                <div class="card-front">
-                    ❓
-                </div>
+                <div class="card-front"></div>
 
                 <div class="card-back">
-                    ${emoji}
+                    ${cardName}
                 </div>
 
             </div>
 
         `;
 
-        card.addEventListener("click", flipCard);
+
+        card.addEventListener(
+            "click",
+            flipCard
+        );
+
 
         board.appendChild(card);
 
@@ -477,28 +927,29 @@ function startGame() {
 }
 
 
+/* ---------------- FLIP ---------------- */
+
 function flipCard() {
 
     if (
         lockBoard ||
         this.classList.contains("flipped") ||
         this.classList.contains("matched")
-    ) {
-        return;
-    }
+    ) return;
 
 
     if (!gameStarted) {
 
         gameStarted = true;
 
-        timer = setInterval(() => {
+        timer =
+            setInterval(() => {
 
-            seconds++;
+                seconds++;
 
-            updateTimer();
+                updateTimer();
 
-        }, 1000);
+            }, 1000);
 
     }
 
@@ -508,12 +959,15 @@ function flipCard() {
     flippedCards.push(this);
 
 
-    if (flippedCards.length === 2) {
+    if (
+        flippedCards.length === 2
+    ) {
 
         moves++;
 
-        document.getElementById("moves").textContent =
-            moves;
+        document.getElementById(
+            "moves"
+        ).textContent = moves;
 
         checkMatch();
 
@@ -521,6 +975,8 @@ function flipCard() {
 
 }
 
+
+/* ---------------- TIMER ---------------- */
 
 function updateTimer() {
 
@@ -530,11 +986,16 @@ function updateTimer() {
     const secs =
         seconds % 60;
 
-    document.getElementById("timer").textContent =
+
+    document.getElementById(
+        "timer"
+    ).textContent =
         `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
 
 }
 
+
+/* ---------------- MATCH ---------------- */
 
 function checkMatch() {
 
@@ -545,27 +1006,45 @@ function checkMatch() {
 
 
     if (
-        card1.dataset.emoji ===
-        card2.dataset.emoji
+        card1.dataset.value ===
+        card2.dataset.value
     ) {
 
-        card1.classList.remove("flipped");
-        card2.classList.remove("flipped");
+        card1.classList.remove(
+            "flipped"
+        );
 
-        card1.classList.add("matched");
-        card2.classList.add("matched");
+        card2.classList.remove(
+            "flipped"
+        );
+
+
+        card1.classList.add(
+            "matched"
+        );
+
+        card2.classList.add(
+            "matched"
+        );
+
 
         matches++;
 
-        document.getElementById("matches").textContent =
+
+        document.getElementById(
+            "matches"
+        ).textContent =
             `${matches} / ${currentPairs}`;
+
 
         flippedCards = [];
 
         lockBoard = false;
 
 
-        if (matches === currentPairs) {
+        if (
+            matches === currentPairs
+        ) {
 
             levelComplete();
 
@@ -577,8 +1056,13 @@ function checkMatch() {
 
         setTimeout(() => {
 
-            card1.classList.remove("flipped");
-            card2.classList.remove("flipped");
+            card1.classList.remove(
+                "flipped"
+            );
+
+            card2.classList.remove(
+                "flipped"
+            );
 
             flippedCards = [];
 
@@ -591,125 +1075,218 @@ function checkMatch() {
 }
 
 
+/* ---------------- SCORE ---------------- */
+
 function calculateScore() {
 
-    /*
-    Higher level = more base points.
-    Fewer moves and less time = higher score.
-    */
-
-    const baseScore =
-        level * 1000;
+    const base =
+        currentLevel * 1000;
 
     const movePenalty =
-        moves * 25;
+        moves * 30;
 
     const timePenalty =
-        seconds * 2;
+        seconds * 3;
 
-    const finalScore =
-        Math.max(
-            100,
-            baseScore -
-            movePenalty -
-            timePenalty
-        );
 
-    return finalScore;
+    return Math.max(
+        100,
+        base -
+        movePenalty -
+        timePenalty
+    );
 
 }
 
+
+/* ---------------- LEVEL COMPLETE ---------------- */
 
 function levelComplete() {
 
     clearInterval(timer);
 
+
     const score =
         calculateScore();
 
-    document.getElementById("score").textContent =
+
+    document.getElementById(
+        "score"
+    ).textContent =
         score;
 
 
-    if (score > highScore) {
+    if (
+        score > highScore
+    ) {
 
         highScore = score;
 
         localStorage.setItem(
-            "memoryHighScore",
+            "codeBlasterHighScore",
             highScore
         );
-
-        document.getElementById("highScore").textContent =
-            highScore;
 
     }
 
 
-    const winMessage =
-        document.getElementById("winMessage");
+    if (
+        currentLevel >= unlockedLevel &&
+        currentLevel < 20
+    ) {
 
-    const winTitle =
-        document.getElementById("winTitle");
+        unlockedLevel =
+            currentLevel + 1;
 
-    const winStats =
-        document.getElementById("winStats");
+        localStorage.setItem(
+            "codeBlasterUnlocked",
+            unlockedLevel
+        );
+
+    }
 
 
-    if (level === 20) {
+    /* ACHIEVEMENTS */
 
-        winTitle.textContent =
-            "👑 ULTIMATE MEMORY MASTER! 👑";
+    if (
+        seconds < 30
+    ) {
 
-        winStats.innerHTML =
-            `🎉 You conquered all 20 levels!<br><br>
-             🏆 Final Score: <b>${score}</b><br>
+        achievements.speed =
+            true;
+
+    }
+
+
+    if (
+        moves === currentPairs
+    ) {
+
+        achievements.perfect =
+            true;
+
+    }
+
+
+    if (
+        currentLevel >= 10
+    ) {
+
+        achievements.warrior =
+            true;
+
+    }
+
+
+    if (
+        currentLevel === 20
+    ) {
+
+        achievements.ultimate =
+            true;
+
+    }
+
+
+    localStorage.setItem(
+        "codeBlasterAchievements",
+        JSON.stringify(
+            achievements
+        )
+    );
+
+
+    updateAchievements();
+
+
+    const title =
+        document.getElementById(
+            "winTitle"
+        );
+
+    const stats =
+        document.getElementById(
+            "winStats"
+        );
+
+
+    if (
+        currentLevel === 20
+    ) {
+
+        title.textContent =
+            "👑 ULTIMATE DEVELOPER UNLOCKED!";
+
+
+        stats.innerHTML =
+            `⚡ Congratulations <b>${playerName}</b>!<br><br>
+             You conquered all 20 Code Blaster challenges! 💻<br><br>
+             🏆 Score: <b>${score}</b><br>
              🎯 Moves: <b>${moves}</b><br>
              ⏱️ Time: <b>${document.getElementById("timer").textContent}</b><br><br>
-             You are the TRUE MEMORY MASTER! 🧠🔥`;
+             YOU ARE AN ULTIMATE DEVELOPER 👑🔥`;
 
-        document.getElementById("nextButton").style.display =
+
+        document.getElementById(
+            "nextButton"
+        ).style.display =
             "none";
 
     }
 
     else {
 
-        winTitle.textContent =
+        title.textContent =
             "🎉 LEVEL COMPLETE!";
 
-        winStats.innerHTML =
-            `🏆 Score: <b>${score}</b><br>
+
+        stats.innerHTML =
+            `Great work, <b>${playerName}</b>! 💻<br><br>
+             🏆 Score: <b>${score}</b><br>
              🎯 Moves: <b>${moves}</b><br>
              ⏱️ Time: <b>${document.getElementById("timer").textContent}</b><br><br>
-             Level ${level + 1} is ready! 🚀`;
+             Level ${currentLevel + 1} unlocked! 🔓⚡`;
 
-        document.getElementById("nextButton").style.display =
+
+        document.getElementById(
+            "nextButton"
+        ).style.display =
             "inline-block";
 
     }
 
 
-    winMessage.style.display =
+    document.getElementById(
+        "winMessage"
+    ).style.display =
         "block";
 
+
     createConfetti();
+
+    buildLevelMap();
 
 }
 
 
+/* ---------------- NEXT LEVEL ---------------- */
+
 function nextLevel() {
 
-    if (level < 20) {
+    if (
+        currentLevel < 20
+    ) {
 
-        level++;
+        currentLevel++;
 
         localStorage.setItem(
-            "memoryLevel",
-            level
+            "codeBlasterLevel",
+            currentLevel
         );
 
+
         startGame();
+
 
         window.scrollTo({
             top: 0,
@@ -721,51 +1298,211 @@ function nextLevel() {
 }
 
 
-function resetProgress() {
+/* ---------------- LEVEL MAP ---------------- */
 
-    const confirmed =
-        confirm(
-            "Reset all 20-level progress and high score?"
+function showLevelMap() {
+
+    const map =
+        document.getElementById(
+            "levelMap"
         );
 
-    if (!confirmed) return;
+
+    map.style.display =
+        map.style.display === "none"
+        ? "block"
+        : "none";
 
 
-    level = 1;
-
-    highScore = 0;
-
-    localStorage.removeItem(
-        "memoryLevel"
-    );
-
-    localStorage.removeItem(
-        "memoryHighScore"
-    );
-
-    startGame();
+    buildLevelMap();
 
 }
 
 
+function buildLevelMap() {
+
+    const grid =
+        document.getElementById(
+            "levelGrid"
+        );
+
+    grid.innerHTML = "";
+
+
+    for (
+        let i = 1;
+        i <= 20;
+        i++
+    ) {
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.classList.add(
+            "level-btn"
+        );
+
+
+        if (
+            i > unlockedLevel
+        ) {
+
+            button.classList.add(
+                "locked"
+            );
+
+            button.innerHTML =
+                `🔒<br>Level ${i}`;
+
+            button.disabled =
+                true;
+
+        }
+
+        else {
+
+            if (
+                i < unlockedLevel
+            ) {
+
+                button.classList.add(
+                    "completed"
+                );
+
+            }
+
+
+            if (
+                i === currentLevel
+            ) {
+
+                button.classList.add(
+                    "current"
+                );
+
+            }
+
+
+            button.innerHTML =
+                `Level ${i}`;
+
+
+            button.onclick =
+                () => {
+
+                    currentLevel = i;
+
+
+                    localStorage.setItem(
+                        "codeBlasterLevel",
+                        currentLevel
+                    );
+
+
+                    startGame();
+
+
+                    document.getElementById(
+                        "levelMap"
+                    ).style.display =
+                        "none";
+
+                };
+
+        }
+
+
+        grid.appendChild(
+            button
+        );
+
+    }
+
+}
+
+
+/* ---------------- ACHIEVEMENTS ---------------- */
+
+function updateAchievements() {
+
+    const achievementElements = {
+
+        speed:
+            "speedAchievement",
+
+        perfect:
+            "perfectAchievement",
+
+        warrior:
+            "warriorAchievement",
+
+        ultimate:
+            "ultimateAchievement"
+
+    };
+
+
+    Object.keys(
+        achievementElements
+    ).forEach(key => {
+
+        const element =
+            document.getElementById(
+                achievementElements[key]
+            );
+
+
+        if (
+            achievements[key]
+        ) {
+
+            element.classList.add(
+                "unlocked"
+            );
+
+        }
+
+    });
+
+}
+
+
+/* ---------------- CONFETTI ---------------- */
+
 function createConfetti() {
 
     const symbols = [
-        "🎉","✨","⭐","🎊","🏆",
-        "🔥","💥"
+        "⚡",
+        "💻",
+        "🎉",
+        "✨",
+        "🏆",
+        "🔥",
+        "👑"
     ];
 
 
-    for (let i = 0; i < 60; i++) {
+    for (
+        let i = 0;
+        i < 70;
+        i++
+    ) {
 
-        const confetti =
-            document.createElement("div");
+        const item =
+            document.createElement(
+                "div"
+            );
 
-        confetti.classList.add(
+
+        item.classList.add(
             "confetti"
         );
 
-        confetti.textContent =
+
+        item.textContent =
             symbols[
                 Math.floor(
                     Math.random() *
@@ -773,35 +1510,102 @@ function createConfetti() {
                 )
             ];
 
-        confetti.style.left =
-            Math.random() * 100 + "vw";
 
-        confetti.style.fontSize =
-            Math.random() * 20 + 15 + "px";
+        item.style.left =
+            Math.random() *
+            100 +
+            "vw";
 
-        confetti.style.animationDuration =
-            Math.random() * 2 + 2 + "s";
+
+        item.style.fontSize =
+            (
+                Math.random() *
+                20 +
+                14
+            ) +
+            "px";
+
+
+        item.style.animationDuration =
+            (
+                Math.random() *
+                2 +
+                2
+            ) +
+            "s";
 
 
         document.body.appendChild(
-            confetti
+            item
         );
 
 
-        setTimeout(() => {
-
-            confetti.remove();
-
-        }, 4000);
+        setTimeout(
+            () => item.remove(),
+            4500
+        );
 
     }
 
 }
 
 
-updateLevelUI();
+/* ---------------- RESET ---------------- */
 
-startGame();
+function resetProgress() {
+
+    const answer =
+        confirm(
+            "Reset all Code Blaster progress?"
+        );
+
+
+    if (!answer) return;
+
+
+    localStorage.removeItem(
+        "codeBlasterUnlocked"
+    );
+
+    localStorage.removeItem(
+        "codeBlasterLevel"
+    );
+
+    localStorage.removeItem(
+        "codeBlasterHighScore"
+    );
+
+    localStorage.removeItem(
+        "codeBlasterAchievements"
+    );
+
+
+    unlockedLevel = 1;
+
+    currentLevel = 1;
+
+    highScore = 0;
+
+    achievements = {
+        speed: false,
+        perfect: false,
+        warrior: false,
+        ultimate: false
+    };
+
+
+    updateAchievements();
+
+    startGame();
+
+}
+
+
+/* ---------------- INITIAL NAME ---------------- */
+
+document.getElementById(
+    "playerName"
+).value = playerName;
 
 </script>
 
