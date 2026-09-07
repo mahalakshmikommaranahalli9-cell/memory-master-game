@@ -5,16 +5,20 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <!-- PWA -->
     <link rel="manifest" href="./manifest.json">
 
     <meta name="theme-color" content="#00f7ff">
 
-    <link rel="apple-touch-icon" href="./icon-192.png">
+    <link rel="apple-touch-icon"
+          href="./icon-192.png">
 
-    <title>MEMORYVERSE 🧠 | The Ultimate Tech Memory Challenge</title>
+    <title>
+        MEMORYVERSE 🧠 | The Ultimate Tech Memory Challenge
+    </title>
 
 
     <style>
@@ -25,6 +29,7 @@
             box-sizing:border-box;
         }
 
+
         :root{
             --cyan:#00f7ff;
             --pink:#ff00cc;
@@ -34,94 +39,153 @@
             --panel:rgba(255,255,255,0.08);
         }
 
+
         body{
+
             min-height:100vh;
-            font-family:Arial,sans-serif;
+
+            font-family:
+                Arial,
+                sans-serif;
 
             background:
-                radial-gradient(circle at top,#25255c 0%,transparent 35%),
-                linear-gradient(135deg,#080812,#15152d,#0b0b18);
+
+                radial-gradient(
+                    circle at top,
+                    #25255c 0%,
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #080812,
+                    #15152d,
+                    #0b0b18
+                );
 
             color:white;
+
             padding:20px;
+
         }
 
 
-        /* =====================
+        /* =========================
            START SCREEN
-        ===================== */
+        ========================= */
 
         .start-screen{
+
             min-height:90vh;
+
             display:flex;
+
             justify-content:center;
+
             align-items:center;
+
         }
 
+
         .start-card{
+
             width:100%;
+
             max-width:600px;
+
             padding:45px 30px;
+
             text-align:center;
 
-            background:rgba(255,255,255,0.08);
+            background:
+                rgba(255,255,255,0.08);
 
-            border:1px solid rgba(0,247,255,0.35);
+            border:
+                1px solid
+                rgba(0,247,255,0.35);
 
             border-radius:25px;
 
-            backdrop-filter:blur(12px);
+            backdrop-filter:
+                blur(12px);
 
             box-shadow:
-                0 0 50px rgba(0,247,255,0.12);
+                0 0 50px
+                rgba(0,247,255,0.12);
+
         }
 
 
         .logo{
+
             font-size:4rem;
+
             margin-bottom:10px;
 
-            animation:pulse 2s infinite;
+            animation:
+                pulse
+                2s infinite;
+
         }
 
 
         @keyframes pulse{
 
             50%{
-                transform:scale(1.12);
+
+                transform:
+                    scale(1.12);
+
             }
 
         }
 
 
         .start-card h1{
+
             font-size:3rem;
+
             letter-spacing:4px;
+
             margin-bottom:10px;
+
         }
 
 
         .highlight{
-            color:var(--cyan);
+
+            color:
+                var(--cyan);
+
         }
 
 
         .start-card h2{
+
             margin-bottom:20px;
-            color:#e4e4f2;
+
+            color:
+                #e4e4f2;
+
         }
 
 
         .start-card p{
-            color:#c5c5d8;
+
+            color:
+                #c5c5d8;
+
             line-height:1.7;
+
             margin-bottom:25px;
+
         }
 
 
         .name-input{
 
             width:100%;
+
             max-width:400px;
 
             padding:16px;
@@ -129,7 +193,8 @@
             border-radius:14px;
 
             border:
-                1px solid rgba(255,255,255,0.2);
+                1px solid
+                rgba(255,255,255,0.2);
 
             outline:none;
 
@@ -143,6 +208,7 @@
                 rgba(255,255,255,0.08);
 
             color:white;
+
         }
 
 
@@ -154,12 +220,13 @@
             box-shadow:
                 0 0 15px
                 rgba(0,247,255,0.3);
+
         }
 
 
-        /* =====================
+        /* =========================
            BUTTONS
-        ===================== */
+        ========================= */
 
         button{
 
@@ -178,26 +245,39 @@
             border-radius:30px;
 
             background:
+
                 linear-gradient(
+
                     135deg,
+
                     var(--cyan),
+
                     var(--purple),
+
                     var(--pink)
+
                 );
 
-            transition:0.3s;
+            transition:
+                0.3s;
+
         }
 
 
         button:hover{
 
             transform:
+
                 translateY(-3px)
+
                 scale(1.03);
 
             box-shadow:
+
                 0 10px 25px
+
                 rgba(0,247,255,0.25);
+
         }
 
 
@@ -207,14 +287,17 @@
                 rgba(255,255,255,0.1);
 
             border:
+
                 1px solid
+
                 rgba(255,255,255,0.2);
+
         }
 
 
-        /* =====================
+        /* =========================
            GAME
-        ===================== */
+        ========================= */
 
         .game-container{
 
@@ -227,12 +310,14 @@
             text-align:center;
 
             display:none;
+
         }
 
 
         .game-header{
 
             margin-bottom:20px;
+
         }
 
 
@@ -241,20 +326,24 @@
             font-size:2.5rem;
 
             letter-spacing:2px;
+
         }
 
 
         .subtitle{
 
-            color:#bdbdd2;
+            color:
+                #bdbdd2;
 
             margin-top:8px;
+
         }
 
 
         .player-banner{
 
-            margin:18px auto;
+            margin:
+                18px auto;
 
             max-width:500px;
 
@@ -266,8 +355,11 @@
                 var(--panel);
 
             border:
+
                 1px solid
+
                 rgba(0,247,255,0.2);
+
         }
 
 
@@ -275,12 +367,13 @@
 
             color:
                 var(--cyan);
+
         }
 
 
-        /* =====================
+        /* =========================
            STATS
-        ===================== */
+        ========================= */
 
         .level-info,
         .stats{
@@ -294,6 +387,7 @@
             flex-wrap:wrap;
 
             margin-bottom:18px;
+
         }
 
 
@@ -309,8 +403,11 @@
                 var(--panel);
 
             border:
+
                 1px solid
+
                 rgba(255,255,255,0.15);
+
         }
 
 
@@ -318,9 +415,11 @@
 
             display:block;
 
-            color:#aaaac0;
+            color:
+                #aaaac0;
 
             margin-bottom:5px;
+
         }
 
 
@@ -334,18 +433,20 @@
 
             color:
                 var(--cyan);
+
         }
 
 
         .theme-box{
 
             min-width:220px;
+
         }
 
 
-        /* =====================
-           PROGRESS
-        ===================== */
+        /* =========================
+           PROGRESS BAR
+        ========================= */
 
         .progress-container{
 
@@ -362,6 +463,7 @@
 
             background:
                 rgba(255,255,255,0.1);
+
         }
 
 
@@ -372,20 +474,26 @@
             width:5%;
 
             background:
+
                 linear-gradient(
+
                     90deg,
+
                     var(--cyan),
+
                     var(--pink)
+
                 );
 
             transition:
                 width 0.5s;
+
         }
 
 
-        /* =====================
+        /* =========================
            GAME BOARD
-        ===================== */
+        ========================= */
 
         .game-board{
 
@@ -399,6 +507,7 @@
                 repeat(4,1fr);
 
             gap:12px;
+
         }
 
 
@@ -409,6 +518,7 @@
             perspective:1000px;
 
             cursor:pointer;
+
         }
 
 
@@ -425,6 +535,7 @@
 
             transition:
                 transform 0.45s;
+
         }
 
 
@@ -433,6 +544,7 @@
 
             transform:
                 rotateY(180deg);
+
         }
 
 
@@ -456,21 +568,30 @@
             padding:8px;
 
             text-align:center;
+
         }
 
 
         .card-front{
 
             background:
+
                 linear-gradient(
+
                     135deg,
+
                     #17173a,
+
                     #34348c
+
                 );
 
             border:
+
                 1px solid
+
                 rgba(0,247,255,0.35);
+
         }
 
 
@@ -479,6 +600,7 @@
             content:"🧠";
 
             font-size:2rem;
+
         }
 
 
@@ -487,15 +609,19 @@
             transform:
                 rotateY(180deg);
 
-            background:#f4f7ff;
+            background:
+                #f4f7ff;
 
-            color:#111;
+            color:
+                #111;
 
             font-size:1rem;
 
             font-weight:bold;
 
-            word-break:break-word;
+            word-break:
+                break-word;
+
         }
 
 
@@ -507,6 +633,7 @@
             animation:
                 matchPulse
                 0.5s ease;
+
         }
 
 
@@ -515,16 +642,19 @@
             50%{
 
                 transform:
+
                     rotateY(180deg)
+
                     scale(1.12);
+
             }
 
         }
 
 
-        /* =====================
+        /* =========================
            CONTROLS
-        ===================== */
+        ========================= */
 
         .controls{
 
@@ -537,12 +667,13 @@
             gap:12px;
 
             flex-wrap:wrap;
+
         }
 
 
-        /* =====================
+        /* =========================
            LEVEL MAP
-        ===================== */
+        ========================= */
 
         .level-map{
 
@@ -558,14 +689,18 @@
                 var(--panel);
 
             border:
+
                 1px solid
+
                 rgba(255,255,255,0.12);
+
         }
 
 
         .level-map h2{
 
             margin-bottom:18px;
+
         }
 
 
@@ -577,6 +712,7 @@
                 repeat(5,1fr);
 
             gap:12px;
+
         }
 
 
@@ -589,6 +725,7 @@
             border-radius:15px;
 
             font-size:0.9rem;
+
         }
 
 
@@ -600,31 +737,41 @@
 
             background:
                 rgba(255,255,255,0.08);
+
         }
 
 
         .level-btn.current{
 
             outline:
+
                 2px solid
+
                 var(--cyan);
+
         }
 
 
         .level-btn.completed{
 
             background:
+
                 linear-gradient(
+
                     135deg,
+
                     #00a86b,
+
                     #00d084
+
                 );
+
         }
 
 
-        /* =====================
+        /* =========================
            ACHIEVEMENTS
-        ===================== */
+        ========================= */
 
         .achievements{
 
@@ -640,8 +787,11 @@
                 var(--panel);
 
             border:
+
                 1px solid
+
                 rgba(255,255,255,0.12);
+
         }
 
 
@@ -653,6 +803,7 @@
                 repeat(2,1fr);
 
             gap:12px;
+
         }
 
 
@@ -666,6 +817,7 @@
                 rgba(255,255,255,0.06);
 
             opacity:0.4;
+
         }
 
 
@@ -674,11 +826,14 @@
             opacity:1;
 
             border:
+
                 1px solid
+
                 var(--yellow);
 
             background:
                 rgba(255,215,0,0.08);
+
         }
 
 
@@ -688,12 +843,13 @@
 
             color:
                 var(--yellow);
+
         }
 
 
-        /* =====================
+        /* =========================
            WIN MESSAGE
-        ===================== */
+        ========================= */
 
         .win-message{
 
@@ -711,8 +867,11 @@
                 rgba(0,255,157,0.12);
 
             border:
+
                 1px solid
+
                 var(--green);
+
         }
 
 
@@ -722,12 +881,13 @@
                 var(--green);
 
             margin-bottom:12px;
+
         }
 
 
-        /* =====================
+        /* =========================
            CONFETTI
-        ===================== */
+        ========================= */
 
         .confetti{
 
@@ -741,6 +901,7 @@
 
             animation:
                 fall linear forwards;
+
         }
 
 
@@ -749,18 +910,21 @@
             to{
 
                 transform:
+
                     translateY(110vh)
+
                     rotate(720deg);
 
                 opacity:0;
+
             }
 
         }
 
 
-        /* =====================
+        /* =========================
            MOBILE
-        ===================== */
+        ========================= */
 
         @media(max-width:650px){
 
@@ -777,6 +941,7 @@
                 font-size:2.1rem;
 
                 letter-spacing:2px;
+
             }
 
             .game-header h1{
@@ -795,22 +960,26 @@
 
                 grid-template-columns:
                     repeat(4,1fr);
+
             }
 
             .achievement-grid{
 
                 grid-template-columns:
                     1fr;
+
             }
 
             .info-box{
 
                 min-width:100px;
+
             }
 
             .theme-box{
 
                 width:100%;
+
             }
 
         }
@@ -879,6 +1048,8 @@
 
                 maxlength="20"
 
+                autocomplete="off"
+
             >
 
 
@@ -936,6 +1107,7 @@
 
         <div class="level-info">
 
+
             <div class="info-box">
 
                 <small>LEVEL</small>
@@ -978,6 +1150,7 @@
                 </span>
 
             </div>
+
 
         </div>
 
@@ -1040,6 +1213,7 @@
 
             </div>
 
+
         </div>
 
 
@@ -1076,7 +1250,7 @@
                 onclick="resetProgress()"
             >
 
-                🗑️ Reset
+                🗑️ Reset My Progress
 
             </button>
 
@@ -1198,9 +1372,7 @@
 
 
             <h2 id="winTitle">
-
                 🎉 LEVEL COMPLETE!
-
             </h2>
 
 
@@ -1228,14 +1400,16 @@
 
 
 
-    <!-- =====================
-         GAME JAVASCRIPT
-    ===================== -->
-
     <script>
 
 
+        /* =====================================
+           20 TECHNOLOGY LEVELS
+        ===================================== */
+
+
         const levelCards = {
+
 
             1:{
                 theme:"🌐 Web Basics",
@@ -1247,6 +1421,7 @@
                 ]
             },
 
+
             2:{
                 theme:"💻 Web Languages",
                 cards:[
@@ -1256,6 +1431,7 @@
                     "TypeScript"
                 ]
             },
+
 
             3:{
                 theme:"🎨 Frontend Tools",
@@ -1267,6 +1443,7 @@
                 ]
             },
 
+
             4:{
                 theme:"⚙️ Backend Basics",
                 cards:[
@@ -1276,6 +1453,7 @@
                     "Java"
                 ]
             },
+
 
             5:{
                 theme:"🗄️ Databases",
@@ -1287,6 +1465,7 @@
                 ]
             },
 
+
             6:{
                 theme:"🛠️ Developer Tools",
                 cards:[
@@ -1296,6 +1475,7 @@
                     "Terminal"
                 ]
             },
+
 
             7:{
                 theme:"🔀 Version Control",
@@ -1307,6 +1487,7 @@
                 ]
             },
 
+
             8:{
                 theme:"🔌 APIs & Testing",
                 cards:[
@@ -1316,6 +1497,7 @@
                     "Swagger"
                 ]
             },
+
 
             9:{
                 theme:"☁️ Cloud Basics",
@@ -1327,6 +1509,7 @@
                 ]
             },
 
+
             10:{
                 theme:"☁️ Cloud Platforms",
                 cards:[
@@ -1336,6 +1519,7 @@
                     "Firebase"
                 ]
             },
+
 
             11:{
                 theme:"🤖 AI Tools",
@@ -1347,6 +1531,7 @@
                 ]
             },
 
+
             12:{
                 theme:"✨ Generative AI",
                 cards:[
@@ -1356,6 +1541,7 @@
                     "DALL·E"
                 ]
             },
+
 
             13:{
                 theme:"📊 Data Science",
@@ -1367,6 +1553,7 @@
                 ]
             },
 
+
             14:{
                 theme:"🐍 Python Ecosystem",
                 cards:[
@@ -1376,6 +1563,7 @@
                     "FastAPI"
                 ]
             },
+
 
             15:{
                 theme:"🟨 JavaScript Ecosystem",
@@ -1387,6 +1575,7 @@
                 ]
             },
 
+
             16:{
                 theme:"📱 Mobile Development",
                 cards:[
@@ -1396,6 +1585,7 @@
                     "Kotlin"
                 ]
             },
+
 
             17:{
                 theme:"🚀 DevOps",
@@ -1407,6 +1597,7 @@
                 ]
             },
 
+
             18:{
                 theme:"🔐 Cybersecurity",
                 cards:[
@@ -1417,6 +1608,7 @@
                 ]
             },
 
+
             19:{
                 theme:"🌌 Advanced Technology",
                 cards:[
@@ -1426,6 +1618,7 @@
                     "Quantum"
                 ]
             },
+
 
             20:{
                 theme:"👑 Ultimate Tech Challenge",
@@ -1447,55 +1640,37 @@
 
 
 
-        /* SAVED DATA */
-
-        let playerName =
-            localStorage.getItem(
-                "memoryVersePlayer"
-            ) || "";
+        /* =====================================
+           PLAYER DATA
+        ===================================== */
 
 
-        let unlockedLevel =
-            Number(
-                localStorage.getItem(
-                    "memoryVerseUnlocked"
-                )
-            ) || 1;
+        let playerName = "";
 
+        let unlockedLevel = 1;
 
-        let currentLevel =
-            Number(
-                localStorage.getItem(
-                    "memoryVerseLevel"
-                )
-            ) || 1;
+        let currentLevel = 1;
 
+        let highScore = 0;
 
-        let highScore =
-            Number(
-                localStorage.getItem(
-                    "memoryVerseHighScore"
-                )
-            ) || 0;
+        let achievements = {
 
+            speed:false,
 
-        let achievements =
-            JSON.parse(
-                localStorage.getItem(
-                    "memoryVerseAchievements"
-                )
-            ) || {
+            perfect:false,
 
-                speed:false,
-                perfect:false,
-                warrior:false,
-                ultimate:false
+            warrior:false,
 
-            };
+            ultimate:false
+
+        };
 
 
 
-        /* GAME VARIABLES */
+        /* =====================================
+           GAME VARIABLES
+        ===================================== */
+
 
         let cards = [];
 
@@ -1519,60 +1694,265 @@
 
 
 
-        /* ENTER GAME */
+        /* =====================================
+           PLAYER STORAGE KEY
+        ===================================== */
+
+
+        function getPlayerKey(){
+
+            return "memoryVersePlayer_" +
+
+                playerName
+
+                    .trim()
+
+                    .toLowerCase()
+
+                    .replace(
+                        /\s+/g,
+                        "_"
+                    );
+
+        }
+
+
+
+        /* =====================================
+           LOAD PLAYER PROGRESS
+        ===================================== */
+
+
+        function loadPlayerProgress(){
+
+
+            const savedData =
+
+                localStorage.getItem(
+
+                    getPlayerKey()
+
+                );
+
+
+            if(savedData){
+
+
+                try{
+
+
+                    const data =
+
+                        JSON.parse(
+                            savedData
+                        );
+
+
+                    unlockedLevel =
+
+                        data.unlockedLevel || 1;
+
+
+                    currentLevel =
+
+                        data.currentLevel || 1;
+
+
+                    highScore =
+
+                        data.highScore || 0;
+
+
+                    achievements =
+
+                        data.achievements || {
+
+                            speed:false,
+
+                            perfect:false,
+
+                            warrior:false,
+
+                            ultimate:false
+
+                        };
+
+
+                }
+                catch(error){
+
+
+                    createNewPlayer();
+
+
+                }
+
+
+            }
+            else{
+
+
+                createNewPlayer();
+
+
+            }
+
+        }
+
+
+
+        /* =====================================
+           CREATE NEW PLAYER
+        ===================================== */
+
+
+        function createNewPlayer(){
+
+
+            unlockedLevel = 1;
+
+            currentLevel = 1;
+
+            highScore = 0;
+
+
+            achievements = {
+
+                speed:false,
+
+                perfect:false,
+
+                warrior:false,
+
+                ultimate:false
+
+            };
+
+
+            savePlayerProgress();
+
+        }
+
+
+
+        /* =====================================
+           SAVE PLAYER PROGRESS
+        ===================================== */
+
+
+        function savePlayerProgress(){
+
+
+            if(!playerName){
+                return;
+            }
+
+
+            const playerData = {
+
+
+                unlockedLevel:
+                    unlockedLevel,
+
+
+                currentLevel:
+                    currentLevel,
+
+
+                highScore:
+                    highScore,
+
+
+                achievements:
+                    achievements
+
+            };
+
+
+            localStorage.setItem(
+
+                getPlayerKey(),
+
+                JSON.stringify(
+                    playerData
+                )
+
+            );
+
+        }
+
+
+
+        /* =====================================
+           ENTER GAME
+        ===================================== */
+
 
         function enterGame(){
 
+
             const input =
+
                 document.getElementById(
                     "playerName"
                 );
 
 
             const enteredName =
+
                 input.value.trim();
 
 
-            if(enteredName){
+            if(!enteredName){
 
-                playerName =
-                    enteredName;
 
-                localStorage.setItem(
-                    "memoryVersePlayer",
-                    playerName
+                alert(
+                    "Please enter your name to start the challenge! 🧠"
                 );
 
-            }
 
-
-            if(!playerName){
-
-                playerName =
-                    "Player";
+                return;
 
             }
+
+
+            /* SET PLAYER */
+
+
+            playerName =
+
+                enteredName;
+
+
+            /* LOAD THIS PLAYER ONLY */
+
+
+            loadPlayerProgress();
 
 
             document.getElementById(
                 "displayName"
             ).textContent =
+
                 playerName;
 
 
             document.getElementById(
                 "startScreen"
             ).style.display =
+
                 "none";
 
 
             document.getElementById(
                 "gameContainer"
             ).style.display =
+
                 "block";
 
 
             updateAchievements();
+
 
             startGame();
 
@@ -1580,27 +1960,55 @@
 
 
 
-        /* RANK */
+        /* =====================================
+           RANK
+        ===================================== */
+
 
         function getRank(){
 
-            if(currentLevel <= 2)
+
+            if(currentLevel <= 2){
+
                 return "Beginner 🌱";
 
-            if(currentLevel <= 5)
+            }
+
+
+            if(currentLevel <= 5){
+
                 return "Web Explorer 🌐";
 
-            if(currentLevel <= 9)
+            }
+
+
+            if(currentLevel <= 9){
+
                 return "Tech Learner 💻";
 
-            if(currentLevel <= 13)
+            }
+
+
+            if(currentLevel <= 13){
+
                 return "AI Explorer 🤖";
 
-            if(currentLevel <= 17)
+            }
+
+
+            if(currentLevel <= 17){
+
                 return "Tech Master ⚡";
 
-            if(currentLevel <= 19)
+            }
+
+
+            if(currentLevel <= 19){
+
                 return "Memory Legend 🔥";
+
+            }
+
 
             return "Ultimate Master 👑";
 
@@ -1608,7 +2016,13 @@
 
 
 
+        /* =====================================
+           PAIRS
+        ===================================== */
+
+
         function getPairs(){
+
 
             return levelCards[
                 currentLevel
@@ -1618,41 +2032,61 @@
 
 
 
+        /* =====================================
+           SHUFFLE
+        ===================================== */
+
+
         function shuffle(array){
 
-            return [...array].sort(
+
+            return [
+
+                ...array
+
+            ].sort(
+
                 () => Math.random() - 0.5
+
             );
 
         }
 
 
 
-        /* UPDATE UI */
+        /* =====================================
+           UPDATE UI
+        ===================================== */
+
 
         function updateUI(){
+
 
             document.getElementById(
                 "level"
             ).textContent =
+
                 currentLevel;
 
 
             document.getElementById(
                 "rank"
             ).textContent =
+
                 getRank();
 
 
             document.getElementById(
                 "highScore"
             ).textContent =
+
                 highScore;
 
 
             document.getElementById(
                 "themeName"
             ).textContent =
+
                 levelCards[
                     currentLevel
                 ].theme;
@@ -1661,17 +2095,24 @@
             document.getElementById(
                 "progressBar"
             ).style.width =
+
                 `${(currentLevel / 20) * 100}%`;
 
         }
 
 
 
-        /* START GAME */
+        /* =====================================
+           START GAME
+        ===================================== */
+
 
         function startGame(){
 
-            clearInterval(timer);
+
+            clearInterval(
+                timer
+            );
 
 
             currentPairs =
@@ -1679,17 +2120,24 @@
 
 
             const selectedCards =
+
                 shuffle(
+
                     levelCards[
                         currentLevel
                     ].cards
+
                 );
 
 
             cards =
+
                 shuffle([
+
                     ...selectedCards,
+
                     ...selectedCards
+
                 ]);
 
 
@@ -1714,48 +2162,55 @@
             document.getElementById(
                 "moves"
             ).textContent =
+
                 "0";
 
 
             document.getElementById(
                 "timer"
             ).textContent =
+
                 "00:00";
 
 
             document.getElementById(
                 "score"
             ).textContent =
+
                 "0";
 
 
             document.getElementById(
                 "matches"
             ).textContent =
+
                 `0 / ${currentPairs}`;
 
 
             document.getElementById(
                 "winMessage"
             ).style.display =
+
                 "none";
 
 
             const board =
+
                 document.getElementById(
                     "gameBoard"
                 );
 
 
-            board.innerHTML =
-                "";
+            board.innerHTML = "";
 
 
             cards.forEach(
+
                 cardValue => {
 
 
                     const card =
+
                         document.createElement(
                             "div"
                         );
@@ -1774,14 +2229,12 @@
 
                         <div class="card-inner">
 
-                            <div
-                                class="card-front"
-                            ></div>
+                            <div class="card-front"></div>
 
-                            <div
-                                class="card-back"
-                            >
+                            <div class="card-back">
+
                                 ${cardValue}
+
                             </div>
 
                         </div>
@@ -1790,8 +2243,11 @@
 
 
                     card.addEventListener(
+
                         "click",
+
                         flipCard
+
                     );
 
 
@@ -1800,15 +2256,20 @@
                     );
 
                 }
+
             );
 
         }
 
 
 
-        /* FLIP CARD */
+        /* =====================================
+           FLIP CARD
+        ===================================== */
+
 
         function flipCard(){
+
 
             if(
 
@@ -1823,26 +2284,35 @@
                 )
 
             ){
+
                 return;
+
             }
 
 
             if(!gameStarted){
 
-                gameStarted =
-                    true;
+
+                gameStarted = true;
 
 
                 timer =
+
                     setInterval(
+
                         () => {
+
 
                             seconds++;
 
+
                             updateTimer();
 
+
                         },
+
                         1000
+
                     );
 
             }
@@ -1862,12 +2332,14 @@
                 flippedCards.length === 2
             ){
 
+
                 moves++;
 
 
                 document.getElementById(
                     "moves"
                 ).textContent =
+
                     moves;
 
 
@@ -1879,17 +2351,23 @@
 
 
 
-        /* TIMER */
+        /* =====================================
+           TIMER
+        ===================================== */
+
 
         function updateTimer(){
 
+
             const minutes =
+
                 Math.floor(
                     seconds / 60
                 );
 
 
             const secs =
+
                 seconds % 60;
 
 
@@ -1903,30 +2381,39 @@
 
 
 
-        /* MATCH */
+        /* =====================================
+           MATCH CHECK
+        ===================================== */
+
 
         function checkMatch(){
 
-            lockBoard =
-                true;
+
+            lockBoard = true;
 
 
             const [
+
                 card1,
+
                 card2
-            ] =
-                flippedCards;
+
+            ] = flippedCards;
 
 
             if(
+
                 card1.dataset.value ===
+
                 card2.dataset.value
+
             ){
 
 
                 card1.classList.remove(
                     "flipped"
                 );
+
 
                 card2.classList.remove(
                     "flipped"
@@ -1936,6 +2423,7 @@
                 card1.classList.add(
                     "matched"
                 );
+
 
                 card2.classList.add(
                     "matched"
@@ -1948,15 +2436,14 @@
                 document.getElementById(
                     "matches"
                 ).textContent =
+
                     `${matches} / ${currentPairs}`;
 
 
-                flippedCards =
-                    [];
+                flippedCards = [];
 
 
-                lockBoard =
-                    false;
+                lockBoard = false;
 
 
                 if(
@@ -1968,6 +2455,7 @@
                 }
 
             }
+
             else{
 
 
@@ -1975,6 +2463,7 @@
 
 
                 setTimeout(
+
                     () => {
 
 
@@ -1988,15 +2477,16 @@
                         );
 
 
-                        flippedCards =
-                            [];
+                        flippedCards = [];
 
 
-                        lockBoard =
-                            false;
+                        lockBoard = false;
+
 
                     },
+
                     750
+
                 );
 
             }
@@ -2005,19 +2495,26 @@
 
 
 
-        /* SCORE */
+        /* =====================================
+           SCORE
+        ===================================== */
+
 
         function calculateScore(){
 
+
             const base =
+
                 currentLevel * 1000;
 
 
             const movePenalty =
+
                 moves * 30;
 
 
             const timePenalty =
+
                 seconds * 3;
 
 
@@ -2026,7 +2523,9 @@
                 100,
 
                 base -
+
                 movePenalty -
+
                 timePenalty
 
             );
@@ -2035,9 +2534,13 @@
 
 
 
-        /* LEVEL COMPLETE */
+        /* =====================================
+           LEVEL COMPLETE
+        ===================================== */
+
 
         function levelComplete(){
+
 
             clearInterval(
                 timer
@@ -2045,29 +2548,30 @@
 
 
             const score =
+
                 calculateScore();
 
 
             document.getElementById(
                 "score"
             ).textContent =
+
                 score;
+
+
+            /* HIGH SCORE */
 
 
             if(
                 score > highScore
             ){
 
-                highScore =
-                    score;
-
-
-                localStorage.setItem(
-                    "memoryVerseHighScore",
-                    highScore
-                );
+                highScore = score;
 
             }
+
+
+            /* UNLOCK NEXT LEVEL */
 
 
             if(
@@ -2078,14 +2582,10 @@
 
             ){
 
+
                 unlockedLevel =
+
                     currentLevel + 1;
-
-
-                localStorage.setItem(
-                    "memoryVerseUnlocked",
-                    unlockedLevel
-                );
 
             }
 
@@ -2093,59 +2593,60 @@
             /* ACHIEVEMENTS */
 
 
-            if(seconds < 30){
+            if(
+                seconds < 30
+            ){
 
-                achievements.speed =
-                    true;
-
-            }
-
-
-            if(wrongAttempts === 0){
-
-                achievements.perfect =
-                    true;
+                achievements.speed = true;
 
             }
 
 
-            if(currentLevel >= 10){
+            if(
+                wrongAttempts === 0
+            ){
 
-                achievements.warrior =
-                    true;
-
-            }
-
-
-            if(currentLevel === 20){
-
-                achievements.ultimate =
-                    true;
+                achievements.perfect = true;
 
             }
 
 
-            localStorage.setItem(
+            if(
+                currentLevel >= 10
+            ){
 
-                "memoryVerseAchievements",
+                achievements.warrior = true;
 
-                JSON.stringify(
-                    achievements
-                )
+            }
 
-            );
+
+            if(
+                currentLevel === 20
+            ){
+
+                achievements.ultimate = true;
+
+            }
+
+
+            /* SAVE CURRENT PLAYER */
+
+
+            savePlayerProgress();
 
 
             updateAchievements();
 
 
             const title =
+
                 document.getElementById(
                     "winTitle"
                 );
 
 
             const stats =
+
                 document.getElementById(
                     "winStats"
                 );
@@ -2157,6 +2658,7 @@
 
 
                 title.textContent =
+
                     "👑 ULTIMATE MEMORY MASTER!";
 
 
@@ -2198,13 +2700,16 @@
                 document.getElementById(
                     "nextButton"
                 ).style.display =
+
                     "none";
 
             }
+
             else{
 
 
                 title.textContent =
+
                     "🎉 LEVEL COMPLETE!";
 
 
@@ -2242,6 +2747,7 @@
                 document.getElementById(
                     "nextButton"
                 ).style.display =
+
                     "inline-block";
 
             }
@@ -2250,10 +2756,12 @@
             document.getElementById(
                 "winMessage"
             ).style.display =
+
                 "block";
 
 
             createConfetti();
+
 
             buildLevelMap();
 
@@ -2261,24 +2769,26 @@
 
 
 
-        /* NEXT LEVEL */
+        /* =====================================
+           NEXT LEVEL
+        ===================================== */
+
 
         function nextLevel(){
+
 
             if(
                 currentLevel < 20
             ){
 
+
                 currentLevel++;
 
 
-                localStorage.setItem(
+                /* SAVE CURRENT PLAYER */
 
-                    "memoryVerseLevel",
 
-                    currentLevel
-
-                );
+                savePlayerProgress();
 
 
                 startGame();
@@ -2298,26 +2808,32 @@
 
 
 
-        /* LEVEL MAP */
+        /* =====================================
+           SHOW LEVEL MAP
+        ===================================== */
+
 
         function showLevelMap(){
 
+
             const map =
+
                 document.getElementById(
                     "levelMap"
                 );
 
 
             if(
-                map.style.display ===
-                "none"
+                map.style.display === "none"
             ){
 
                 map.style.display =
                     "block";
 
             }
+
             else{
+
 
                 map.style.display =
                     "none";
@@ -2331,26 +2847,37 @@
 
 
 
+        /* =====================================
+           BUILD LEVEL MAP
+        ===================================== */
+
+
         function buildLevelMap(){
 
+
             const grid =
+
                 document.getElementById(
                     "levelGrid"
                 );
 
 
-            grid.innerHTML =
-                "";
+            grid.innerHTML = "";
 
 
             for(
+
                 let i = 1;
+
                 i <= 20;
+
                 i++
+
             ){
 
 
                 const button =
+
                     document.createElement(
                         "button"
                     );
@@ -2372,6 +2899,7 @@
 
 
                     button.innerHTML =
+
                         `🔒<br>Level ${i}`;
 
 
@@ -2379,6 +2907,7 @@
                         true;
 
                 }
+
                 else{
 
 
@@ -2405,24 +2934,22 @@
 
 
                     button.innerHTML =
+
                         `Level ${i}`;
 
 
                     button.onclick =
+
                         () => {
 
 
-                            currentLevel =
-                                i;
+                            currentLevel = i;
 
 
-                            localStorage.setItem(
+                            /* SAVE CURRENT PLAYER */
 
-                                "memoryVerseLevel",
 
-                                currentLevel
-
-                            );
+                            savePlayerProgress();
 
 
                             startGame();
@@ -2431,6 +2958,7 @@
                             document.getElementById(
                                 "levelMap"
                             ).style.display =
+
                                 "none";
 
                         };
@@ -2448,21 +2976,28 @@
 
 
 
-        /* ACHIEVEMENTS */
+        /* =====================================
+           ACHIEVEMENTS
+        ===================================== */
+
 
         function updateAchievements(){
 
 
             const achievementElements = {
 
+
                 speed:
                     "speedAchievement",
+
 
                 perfect:
                     "perfectAchievement",
 
+
                 warrior:
                     "warriorAchievement",
+
 
                 ultimate:
                     "ultimateAchievement"
@@ -2473,10 +3008,12 @@
             Object.keys(
                 achievementElements
             ).forEach(
+
                 key => {
 
 
                     const element =
+
                         document.getElementById(
                             achievementElements[key]
                         );
@@ -2486,12 +3023,15 @@
                         achievements[key]
                     ){
 
+
                         element.classList.add(
                             "unlocked"
                         );
 
                     }
+
                     else{
+
 
                         element.classList.remove(
                             "unlocked"
@@ -2500,13 +3040,17 @@
                     }
 
                 }
+
             );
 
         }
 
 
 
-        /* CONFETTI */
+        /* =====================================
+           CONFETTI
+        ===================================== */
+
 
         function createConfetti(){
 
@@ -2527,13 +3071,18 @@
 
 
             for(
+
                 let i = 0;
+
                 i < 70;
+
                 i++
+
             ){
 
 
                 const item =
+
                     document.createElement(
                         "div"
                     );
@@ -2547,36 +3096,54 @@
                 item.textContent =
 
                     symbols[
+
                         Math.floor(
+
                             Math.random() *
+
                             symbols.length
+
                         )
+
                     ];
 
 
                 item.style.left =
+
                     Math.random() *
+
                     100 +
+
                     "vw";
 
 
                 item.style.fontSize =
 
                     (
+
                         Math.random() *
+
                         20 +
+
                         14
+
                     ) +
+
                     "px";
 
 
                 item.style.animationDuration =
 
                     (
+
                         Math.random() *
+
                         2 +
+
                         2
+
                     ) +
+
                     "s";
 
 
@@ -2586,8 +3153,11 @@
 
 
                 setTimeout(
+
                     () => item.remove(),
+
                     4500
+
                 );
 
             }
@@ -2596,47 +3166,38 @@
 
 
 
-        /* RESET */
+        /* =====================================
+           RESET CURRENT PLAYER ONLY
+        ===================================== */
+
 
         function resetProgress(){
 
 
             const answer =
+
                 confirm(
-                    "Reset all MemoryVerse progress?"
+
+                    `Reset all progress for ${playerName}?`
+
                 );
 
 
             if(!answer){
+
                 return;
+
             }
 
 
-            localStorage.removeItem(
-                "memoryVerseUnlocked"
-            );
-
-            localStorage.removeItem(
-                "memoryVerseLevel"
-            );
-
-            localStorage.removeItem(
-                "memoryVerseHighScore"
-            );
-
-            localStorage.removeItem(
-                "memoryVerseAchievements"
-            );
+            /* RESET ONLY CURRENT PLAYER */
 
 
-            unlockedLevel =
-                1;
+            unlockedLevel = 1;
 
-            currentLevel =
-                1;
+            currentLevel = 1;
 
-            highScore =
-                0;
+            highScore = 0;
 
 
             achievements = {
@@ -2652,7 +3213,11 @@
             };
 
 
+            savePlayerProgress();
+
+
             updateAchievements();
+
 
             startGame();
 
@@ -2660,32 +3225,31 @@
 
 
 
-        /* LOAD PLAYER */
+        /* =====================================
+           PWA SERVICE WORKER
+        ===================================== */
 
-        document.getElementById(
-            "playerName"
-        ).value =
-            playerName;
-
-
-
-        /* =====================
-           SERVICE WORKER
-        ===================== */
 
         if(
             "serviceWorker" in navigator
         ){
 
+
             window.addEventListener(
+
                 "load",
+
                 () => {
 
+
                     navigator.serviceWorker
+
                         .register(
                             "./service-worker.js"
                         )
+
                         .then(
+
                             () => {
 
                                 console.log(
@@ -2693,8 +3257,11 @@
                                 );
 
                             }
+
                         )
+
                         .catch(
+
                             error => {
 
                                 console.log(
@@ -2703,9 +3270,11 @@
                                 );
 
                             }
+
                         );
 
                 }
+
             );
 
         }
