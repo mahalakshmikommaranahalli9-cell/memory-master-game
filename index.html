@@ -5,20 +5,16 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- PWA -->
     <link rel="manifest" href="./manifest.json">
 
     <meta name="theme-color" content="#00f7ff">
 
-    <link rel="apple-touch-icon"
-          href="./icon-192.png">
+    <link rel="apple-touch-icon" href="./icon-192.png">
 
-    <title>
-        MEMORYVERSE 🧠 | The Ultimate Tech Memory Challenge
-    </title>
+    <title>MEMORYVERSE 🧠 | The Ultimate Tech Memory Challenge</title>
 
 
     <style>
@@ -29,7 +25,6 @@
             box-sizing:border-box;
         }
 
-
         :root{
             --cyan:#00f7ff;
             --pink:#ff00cc;
@@ -39,14 +34,11 @@
             --panel:rgba(255,255,255,0.08);
         }
 
-
         body{
 
             min-height:100vh;
 
-            font-family:
-                Arial,
-                sans-serif;
+            font-family:Arial,sans-serif;
 
             background:
 
@@ -86,7 +78,6 @@
 
         }
 
-
         .start-card{
 
             width:100%;
@@ -97,8 +88,7 @@
 
             text-align:center;
 
-            background:
-                rgba(255,255,255,0.08);
+            background:rgba(255,255,255,0.08);
 
             border:
                 1px solid
@@ -106,8 +96,7 @@
 
             border-radius:25px;
 
-            backdrop-filter:
-                blur(12px);
+            backdrop-filter:blur(12px);
 
             box-shadow:
                 0 0 50px
@@ -115,31 +104,23 @@
 
         }
 
-
         .logo{
 
             font-size:4rem;
 
             margin-bottom:10px;
 
-            animation:
-                pulse
-                2s infinite;
+            animation:pulse 2s infinite;
 
         }
-
 
         @keyframes pulse{
 
             50%{
-
-                transform:
-                    scale(1.12);
-
+                transform:scale(1.12);
             }
 
         }
-
 
         .start-card h1{
 
@@ -151,36 +132,27 @@
 
         }
 
-
         .highlight{
-
-            color:
-                var(--cyan);
-
+            color:var(--cyan);
         }
-
 
         .start-card h2{
 
             margin-bottom:20px;
 
-            color:
-                #e4e4f2;
+            color:#e4e4f2;
 
         }
 
-
         .start-card p{
 
-            color:
-                #c5c5d8;
+            color:#c5c5d8;
 
             line-height:1.7;
 
             margin-bottom:25px;
 
         }
-
 
         .name-input{
 
@@ -211,11 +183,9 @@
 
         }
 
-
         .name-input:focus{
 
-            border-color:
-                var(--cyan);
+            border-color:var(--cyan);
 
             box-shadow:
                 0 0 15px
@@ -247,39 +217,27 @@
             background:
 
                 linear-gradient(
-
                     135deg,
-
                     var(--cyan),
-
                     var(--purple),
-
                     var(--pink)
-
                 );
 
-            transition:
-                0.3s;
+            transition:0.3s;
 
         }
-
 
         button:hover{
 
             transform:
-
                 translateY(-3px)
-
                 scale(1.03);
 
             box-shadow:
-
                 0 10px 25px
-
                 rgba(0,247,255,0.25);
 
         }
-
 
         .secondary-btn{
 
@@ -287,9 +245,7 @@
                 rgba(255,255,255,0.1);
 
             border:
-
                 1px solid
-
                 rgba(255,255,255,0.2);
 
         }
@@ -313,13 +269,9 @@
 
         }
 
-
         .game-header{
-
             margin-bottom:20px;
-
         }
-
 
         .game-header h1{
 
@@ -329,21 +281,17 @@
 
         }
 
-
         .subtitle{
 
-            color:
-                #bdbdd2;
+            color:#bdbdd2;
 
             margin-top:8px;
 
         }
 
-
         .player-banner{
 
-            margin:
-                18px auto;
+            margin:18px auto;
 
             max-width:500px;
 
@@ -351,23 +299,16 @@
 
             border-radius:14px;
 
-            background:
-                var(--panel);
+            background:var(--panel);
 
             border:
-
                 1px solid
-
                 rgba(0,247,255,0.2);
 
         }
 
-
         .player-banner strong{
-
-            color:
-                var(--cyan);
-
+            color:var(--cyan);
         }
 
 
@@ -390,7 +331,6 @@
 
         }
 
-
         .info-box{
 
             min-width:125px;
@@ -399,29 +339,23 @@
 
             border-radius:14px;
 
-            background:
-                var(--panel);
+            background:var(--panel);
 
             border:
-
                 1px solid
-
                 rgba(255,255,255,0.15);
 
         }
-
 
         .info-box small{
 
             display:block;
 
-            color:
-                #aaaac0;
+            color:#aaaac0;
 
             margin-bottom:5px;
 
         }
-
 
         .info-box span{
 
@@ -431,16 +365,12 @@
 
             font-weight:bold;
 
-            color:
-                var(--cyan);
+            color:var(--cyan);
 
         }
 
-
         .theme-box{
-
             min-width:220px;
-
         }
 
 
@@ -452,8 +382,7 @@
 
             max-width:650px;
 
-            margin:
-                0 auto 25px;
+            margin:0 auto 25px;
 
             height:12px;
 
@@ -466,7 +395,6 @@
 
         }
 
-
         .progress-bar{
 
             height:100%;
@@ -476,17 +404,12 @@
             background:
 
                 linear-gradient(
-
                     90deg,
-
                     var(--cyan),
-
                     var(--pink)
-
                 );
 
-            transition:
-                width 0.5s;
+            transition:width 0.5s;
 
         }
 
@@ -510,7 +433,6 @@
 
         }
 
-
         .card{
 
             aspect-ratio:1/1;
@@ -521,7 +443,6 @@
 
         }
 
-
         .card-inner{
 
             width:100%;
@@ -530,23 +451,18 @@
 
             position:relative;
 
-            transform-style:
-                preserve-3d;
+            transform-style:preserve-3d;
 
-            transition:
-                transform 0.45s;
+            transition:transform 0.45s;
 
         }
-
 
         .card.flipped .card-inner,
         .card.matched .card-inner{
 
-            transform:
-                rotateY(180deg);
+            transform:rotateY(180deg);
 
         }
-
 
         .card-front,
         .card-back{
@@ -571,29 +487,21 @@
 
         }
 
-
         .card-front{
 
             background:
 
                 linear-gradient(
-
                     135deg,
-
                     #17173a,
-
                     #34348c
-
                 );
 
             border:
-
                 1px solid
-
                 rgba(0,247,255,0.35);
 
         }
-
 
         .card-front::after{
 
@@ -603,32 +511,25 @@
 
         }
 
-
         .card-back{
 
-            transform:
-                rotateY(180deg);
+            transform:rotateY(180deg);
 
-            background:
-                #f4f7ff;
+            background:#f4f7ff;
 
-            color:
-                #111;
+            color:#111;
 
             font-size:1rem;
 
             font-weight:bold;
 
-            word-break:
-                break-word;
+            word-break:break-word;
 
         }
 
-
         .card.matched .card-back{
 
-            background:
-                var(--green);
+            background:var(--green);
 
             animation:
                 matchPulse
@@ -636,15 +537,12 @@
 
         }
 
-
         @keyframes matchPulse{
 
             50%{
 
                 transform:
-
                     rotateY(180deg)
-
                     scale(1.12);
 
             }
@@ -685,24 +583,17 @@
 
             border-radius:20px;
 
-            background:
-                var(--panel);
+            background:var(--panel);
 
             border:
-
                 1px solid
-
                 rgba(255,255,255,0.12);
 
         }
 
-
         .level-map h2{
-
             margin-bottom:18px;
-
         }
-
 
         .level-grid{
 
@@ -714,7 +605,6 @@
             gap:12px;
 
         }
-
 
         .level-btn{
 
@@ -728,7 +618,6 @@
 
         }
 
-
         .level-btn.locked{
 
             opacity:0.4;
@@ -740,30 +629,22 @@
 
         }
 
-
         .level-btn.current{
 
             outline:
-
                 2px solid
-
                 var(--cyan);
 
         }
-
 
         .level-btn.completed{
 
             background:
 
                 linear-gradient(
-
                     135deg,
-
                     #00a86b,
-
                     #00d084
-
                 );
 
         }
@@ -783,17 +664,13 @@
 
             border-radius:20px;
 
-            background:
-                var(--panel);
+            background:var(--panel);
 
             border:
-
                 1px solid
-
                 rgba(255,255,255,0.12);
 
         }
-
 
         .achievement-grid{
 
@@ -805,7 +682,6 @@
             gap:12px;
 
         }
-
 
         .achievement{
 
@@ -820,15 +696,12 @@
 
         }
 
-
         .achievement.unlocked{
 
             opacity:1;
 
             border:
-
                 1px solid
-
                 var(--yellow);
 
             background:
@@ -836,13 +709,11 @@
 
         }
 
-
         .achievement h3{
 
             margin-bottom:6px;
 
-            color:
-                var(--yellow);
+            color:var(--yellow);
 
         }
 
@@ -867,18 +738,14 @@
                 rgba(0,255,157,0.12);
 
             border:
-
                 1px solid
-
                 var(--green);
 
         }
 
-
         .win-message h2{
 
-            color:
-                var(--green);
+            color:var(--green);
 
             margin-bottom:12px;
 
@@ -904,20 +771,74 @@
 
         }
 
-
         @keyframes fall{
 
             to{
 
                 transform:
-
                     translateY(110vh)
-
                     rotate(720deg);
 
                 opacity:0;
 
             }
+
+        }
+
+
+        /* =========================
+           CREATOR FOOTER
+        ========================= */
+
+        .creator-footer{
+
+            margin-top:55px;
+
+            padding:30px 20px;
+
+            display:flex;
+
+            justify-content:space-around;
+
+            align-items:center;
+
+            flex-wrap:wrap;
+
+            gap:20px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            color:#d8d8e8;
+
+            font-size:1.1rem;
+
+            text-align:center;
+
+        }
+
+        .creator-name{
+
+            color:white;
+
+            font-weight:bold;
+
+            font-size:1.3rem;
+
+        }
+
+        .made-with{
+
+            color:#bdbdd2;
+
+        }
+
+        .heart{
+
+            color:#ff4d8d;
+
+            font-size:1.4rem;
 
         }
 
@@ -964,21 +885,24 @@
             }
 
             .achievement-grid{
-
-                grid-template-columns:
-                    1fr;
-
+                grid-template-columns:1fr;
             }
 
             .info-box{
-
                 min-width:100px;
-
             }
 
             .theme-box{
-
                 width:100%;
+            }
+
+            .creator-footer{
+
+                flex-direction:column;
+
+                padding:25px 10px;
+
+                font-size:1rem;
 
             }
 
@@ -1229,9 +1153,7 @@
 
 
             <button onclick="startGame()">
-
                 🔄 Restart Level
-
             </button>
 
 
@@ -1239,9 +1161,7 @@
                 class="secondary-btn"
                 onclick="showLevelMap()"
             >
-
                 🗺️ Levels
-
             </button>
 
 
@@ -1249,9 +1169,7 @@
                 class="secondary-btn"
                 onclick="resetProgress()"
             >
-
                 🗑️ Reset My Progress
-
             </button>
 
 
@@ -1308,7 +1226,6 @@
                 </div>
 
 
-
                 <div
                     class="achievement"
                     id="perfectAchievement"
@@ -1325,7 +1242,6 @@
                 </div>
 
 
-
                 <div
                     class="achievement"
                     id="warriorAchievement"
@@ -1340,7 +1256,6 @@
                     </p>
 
                 </div>
-
 
 
                 <div
@@ -1385,15 +1300,42 @@
                     id="nextButton"
                     onclick="nextLevel()"
                 >
-
                     ➡️ Next Level
-
                 </button>
 
             </div>
 
 
         </section>
+
+
+
+        <!-- CREATOR FOOTER -->
+
+        <footer class="creator-footer">
+
+            <div>
+
+                ©
+
+                <span class="creator-name">
+                    Mahalakshmi Kommaranahalli
+                </span>
+
+            </div>
+
+
+            <div class="made-with">
+
+                Made with
+
+                <span class="heart">♥</span>
+
+                in Davanagere
+
+            </div>
+
+        </footer>
 
 
     </main>
@@ -1407,218 +1349,102 @@
            20 TECHNOLOGY LEVELS
         ===================================== */
 
-
         const levelCards = {
-
 
             1:{
                 theme:"🌐 Web Basics",
-                cards:[
-                    "HTML",
-                    "CSS",
-                    "JavaScript",
-                    "Web"
-                ]
+                cards:["HTML","CSS","JavaScript","Web"]
             },
-
 
             2:{
                 theme:"💻 Web Languages",
-                cards:[
-                    "HTML",
-                    "CSS",
-                    "JavaScript",
-                    "TypeScript"
-                ]
+                cards:["HTML","CSS","JavaScript","TypeScript"]
             },
-
 
             3:{
                 theme:"🎨 Frontend Tools",
-                cards:[
-                    "React",
-                    "Angular",
-                    "Vue",
-                    "Figma"
-                ]
+                cards:["React","Angular","Vue","Figma"]
             },
-
 
             4:{
                 theme:"⚙️ Backend Basics",
-                cards:[
-                    "Node.js",
-                    "Express",
-                    "PHP",
-                    "Java"
-                ]
+                cards:["Node.js","Express","PHP","Java"]
             },
-
 
             5:{
                 theme:"🗄️ Databases",
-                cards:[
-                    "MySQL",
-                    "MongoDB",
-                    "PostgreSQL",
-                    "Firebase"
-                ]
+                cards:["MySQL","MongoDB","PostgreSQL","Firebase"]
             },
-
 
             6:{
                 theme:"🛠️ Developer Tools",
-                cards:[
-                    "VS Code",
-                    "Postman",
-                    "GitHub",
-                    "Terminal"
-                ]
+                cards:["VS Code","Postman","GitHub","Terminal"]
             },
-
 
             7:{
                 theme:"🔀 Version Control",
-                cards:[
-                    "Git",
-                    "GitHub",
-                    "GitLab",
-                    "Bitbucket"
-                ]
+                cards:["Git","GitHub","GitLab","Bitbucket"]
             },
-
 
             8:{
                 theme:"🔌 APIs & Testing",
-                cards:[
-                    "REST API",
-                    "GraphQL",
-                    "Postman",
-                    "Swagger"
-                ]
+                cards:["REST API","GraphQL","Postman","Swagger"]
             },
-
 
             9:{
                 theme:"☁️ Cloud Basics",
-                cards:[
-                    "Cloud",
-                    "Server",
-                    "Storage",
-                    "Database"
-                ]
+                cards:["Cloud","Server","Storage","Database"]
             },
-
 
             10:{
                 theme:"☁️ Cloud Platforms",
-                cards:[
-                    "Google Cloud",
-                    "AWS",
-                    "Azure",
-                    "Firebase"
-                ]
+                cards:["Google Cloud","AWS","Azure","Firebase"]
             },
-
 
             11:{
                 theme:"🤖 AI Tools",
-                cards:[
-                    "ChatGPT",
-                    "Gemini",
-                    "Claude",
-                    "Copilot"
-                ]
+                cards:["ChatGPT","Gemini","Claude","Copilot"]
             },
-
 
             12:{
                 theme:"✨ Generative AI",
-                cards:[
-                    "GPT",
-                    "Gemini AI",
-                    "Claude AI",
-                    "DALL·E"
-                ]
+                cards:["GPT","Gemini AI","Claude AI","DALL·E"]
             },
-
 
             13:{
                 theme:"📊 Data Science",
-                cards:[
-                    "Pandas",
-                    "NumPy",
-                    "Jupyter",
-                    "TensorFlow"
-                ]
+                cards:["Pandas","NumPy","Jupyter","TensorFlow"]
             },
-
 
             14:{
                 theme:"🐍 Python Ecosystem",
-                cards:[
-                    "Python",
-                    "Flask",
-                    "Django",
-                    "FastAPI"
-                ]
+                cards:["Python","Flask","Django","FastAPI"]
             },
-
 
             15:{
                 theme:"🟨 JavaScript Ecosystem",
-                cards:[
-                    "Node.js",
-                    "React",
-                    "Next.js",
-                    "npm"
-                ]
+                cards:["Node.js","React","Next.js","npm"]
             },
-
 
             16:{
                 theme:"📱 Mobile Development",
-                cards:[
-                    "Flutter",
-                    "React Native",
-                    "Android",
-                    "Kotlin"
-                ]
+                cards:["Flutter","React Native","Android","Kotlin"]
             },
-
 
             17:{
                 theme:"🚀 DevOps",
-                cards:[
-                    "Docker",
-                    "Kubernetes",
-                    "Jenkins",
-                    "CI/CD"
-                ]
+                cards:["Docker","Kubernetes","Jenkins","CI/CD"]
             },
-
 
             18:{
                 theme:"🔐 Cybersecurity",
-                cards:[
-                    "Encryption",
-                    "Firewall",
-                    "VPN",
-                    "HTTPS"
-                ]
+                cards:["Encryption","Firewall","VPN","HTTPS"]
             },
-
 
             19:{
                 theme:"🌌 Advanced Technology",
-                cards:[
-                    "Blockchain",
-                    "IoT",
-                    "AR/VR",
-                    "Quantum"
-                ]
+                cards:["Blockchain","IoT","AR/VR","Quantum"]
             },
-
 
             20:{
                 theme:"👑 Ultimate Tech Challenge",
@@ -1639,11 +1465,7 @@
         };
 
 
-
-        /* =====================================
-           PLAYER DATA
-        ===================================== */
-
+        /* PLAYER DATA */
 
         let playerName = "";
 
@@ -1666,11 +1488,7 @@
         };
 
 
-
-        /* =====================================
-           GAME VARIABLES
-        ===================================== */
-
+        /* GAME VARIABLES */
 
         let cards = [];
 
@@ -1693,128 +1511,79 @@
         let wrongAttempts = 0;
 
 
-
-        /* =====================================
-           PLAYER STORAGE KEY
-        ===================================== */
-
+        /* PLAYER STORAGE KEY */
 
         function getPlayerKey(){
 
             return "memoryVersePlayer_" +
 
                 playerName
-
                     .trim()
-
                     .toLowerCase()
-
-                    .replace(
-                        /\s+/g,
-                        "_"
-                    );
+                    .replace(/\s+/g,"_");
 
         }
 
 
-
-        /* =====================================
-           LOAD PLAYER PROGRESS
-        ===================================== */
-
+        /* LOAD PLAYER PROGRESS */
 
         function loadPlayerProgress(){
 
-
-            const savedData =
-
-                localStorage.getItem(
-
-                    getPlayerKey()
-
-                );
-
+            const savedData = localStorage.getItem(
+                getPlayerKey()
+            );
 
             if(savedData){
 
-
                 try{
 
-
-                    const data =
-
-                        JSON.parse(
-                            savedData
-                        );
-
+                    const data = JSON.parse(savedData);
 
                     unlockedLevel =
-
                         data.unlockedLevel || 1;
 
-
                     currentLevel =
-
                         data.currentLevel || 1;
 
-
                     highScore =
-
                         data.highScore || 0;
 
-
                     achievements =
-
                         data.achievements || {
 
                             speed:false,
-
                             perfect:false,
-
                             warrior:false,
-
                             ultimate:false
 
                         };
 
-
                 }
                 catch(error){
 
-
                     createNewPlayer();
 
-
                 }
-
 
             }
             else{
 
-
                 createNewPlayer();
-
 
             }
 
         }
 
 
-
-        /* =====================================
-           CREATE NEW PLAYER
-        ===================================== */
-
+        /* CREATE NEW PLAYER */
 
         function createNewPlayer(){
-
 
             unlockedLevel = 1;
 
             currentLevel = 1;
 
             highScore = 0;
-
 
             achievements = {
 
@@ -1828,201 +1597,121 @@
 
             };
 
-
             savePlayerProgress();
 
         }
 
 
-
-        /* =====================================
-           SAVE PLAYER PROGRESS
-        ===================================== */
-
+        /* SAVE PLAYER PROGRESS */
 
         function savePlayerProgress(){
-
 
             if(!playerName){
                 return;
             }
 
-
             const playerData = {
 
+                unlockedLevel:unlockedLevel,
 
-                unlockedLevel:
-                    unlockedLevel,
+                currentLevel:currentLevel,
 
+                highScore:highScore,
 
-                currentLevel:
-                    currentLevel,
-
-
-                highScore:
-                    highScore,
-
-
-                achievements:
-                    achievements
+                achievements:achievements
 
             };
-
 
             localStorage.setItem(
 
                 getPlayerKey(),
 
-                JSON.stringify(
-                    playerData
-                )
+                JSON.stringify(playerData)
 
             );
 
         }
 
 
-
-        /* =====================================
-           ENTER GAME
-        ===================================== */
-
+        /* ENTER GAME */
 
         function enterGame(){
 
-
             const input =
-
-                document.getElementById(
-                    "playerName"
-                );
-
+                document.getElementById("playerName");
 
             const enteredName =
-
                 input.value.trim();
 
-
             if(!enteredName){
-
 
                 alert(
                     "Please enter your name to start the challenge! 🧠"
                 );
 
-
                 return;
 
             }
 
-
-            /* SET PLAYER */
-
-
-            playerName =
-
-                enteredName;
-
-
-            /* LOAD THIS PLAYER ONLY */
-
+            playerName = enteredName;
 
             loadPlayerProgress();
 
-
             document.getElementById(
                 "displayName"
-            ).textContent =
-
-                playerName;
-
+            ).textContent = playerName;
 
             document.getElementById(
                 "startScreen"
-            ).style.display =
-
-                "none";
-
+            ).style.display = "none";
 
             document.getElementById(
                 "gameContainer"
-            ).style.display =
-
-                "block";
-
+            ).style.display = "block";
 
             updateAchievements();
-
 
             startGame();
 
         }
 
 
-
-        /* =====================================
-           RANK
-        ===================================== */
-
+        /* RANK */
 
         function getRank(){
 
-
             if(currentLevel <= 2){
-
                 return "Beginner 🌱";
-
             }
-
 
             if(currentLevel <= 5){
-
                 return "Web Explorer 🌐";
-
             }
-
 
             if(currentLevel <= 9){
-
                 return "Tech Learner 💻";
-
             }
-
 
             if(currentLevel <= 13){
-
                 return "AI Explorer 🤖";
-
             }
-
 
             if(currentLevel <= 17){
-
                 return "Tech Master ⚡";
-
             }
-
 
             if(currentLevel <= 19){
-
                 return "Memory Legend 🔥";
-
             }
-
 
             return "Ultimate Master 👑";
 
         }
 
 
-
-        /* =====================================
-           PAIRS
-        ===================================== */
-
+        /* PAIRS */
 
         function getPairs(){
-
 
             return levelCards[
                 currentLevel
@@ -2031,115 +1720,62 @@
         }
 
 
-
-        /* =====================================
-           SHUFFLE
-        ===================================== */
-
+        /* SHUFFLE */
 
         function shuffle(array){
 
-
-            return [
-
-                ...array
-
-            ].sort(
-
+            return [...array].sort(
                 () => Math.random() - 0.5
-
             );
 
         }
 
 
-
-        /* =====================================
-           UPDATE UI
-        ===================================== */
-
+        /* UPDATE UI */
 
         function updateUI(){
 
-
             document.getElementById(
                 "level"
-            ).textContent =
-
-                currentLevel;
-
+            ).textContent = currentLevel;
 
             document.getElementById(
                 "rank"
-            ).textContent =
-
-                getRank();
-
+            ).textContent = getRank();
 
             document.getElementById(
                 "highScore"
-            ).textContent =
-
-                highScore;
-
+            ).textContent = highScore;
 
             document.getElementById(
                 "themeName"
             ).textContent =
-
-                levelCards[
-                    currentLevel
-                ].theme;
-
+                levelCards[currentLevel].theme;
 
             document.getElementById(
                 "progressBar"
             ).style.width =
-
                 `${(currentLevel / 20) * 100}%`;
 
         }
 
 
-
-        /* =====================================
-           START GAME
-        ===================================== */
-
+        /* START GAME */
 
         function startGame(){
 
+            clearInterval(timer);
 
-            clearInterval(
-                timer
+            currentPairs = getPairs();
+
+            const selectedCards = shuffle(
+                levelCards[currentLevel].cards
             );
 
-
-            currentPairs =
-                getPairs();
-
-
-            const selectedCards =
-
-                shuffle(
-
-                    levelCards[
-                        currentLevel
-                    ].cards
-
-                );
-
-
-            cards =
-
-                shuffle([
-
-                    ...selectedCards,
-
-                    ...selectedCards
-
-                ]);
-
+            cards = shuffle([
+                ...selectedCards,
+                ...selectedCards
+            ]);
 
             flippedCards = [];
 
@@ -2155,193 +1791,113 @@
 
             lockBoard = false;
 
-
             updateUI();
-
 
             document.getElementById(
                 "moves"
-            ).textContent =
-
-                "0";
-
+            ).textContent = "0";
 
             document.getElementById(
                 "timer"
-            ).textContent =
-
-                "00:00";
-
+            ).textContent = "00:00";
 
             document.getElementById(
                 "score"
-            ).textContent =
-
-                "0";
-
+            ).textContent = "0";
 
             document.getElementById(
                 "matches"
             ).textContent =
-
                 `0 / ${currentPairs}`;
-
 
             document.getElementById(
                 "winMessage"
-            ).style.display =
-
-                "none";
-
+            ).style.display = "none";
 
             const board =
-
                 document.getElementById(
                     "gameBoard"
                 );
 
-
             board.innerHTML = "";
 
+            cards.forEach(cardValue => {
 
-            cards.forEach(
+                const card =
+                    document.createElement("div");
 
-                cardValue => {
+                card.classList.add("card");
 
+                card.dataset.value =
+                    cardValue;
 
-                    const card =
+                card.innerHTML = `
 
-                        document.createElement(
-                            "div"
-                        );
+                    <div class="card-inner">
 
+                        <div class="card-front"></div>
 
-                    card.classList.add(
-                        "card"
-                    );
-
-
-                    card.dataset.value =
-                        cardValue;
-
-
-                    card.innerHTML = `
-
-                        <div class="card-inner">
-
-                            <div class="card-front"></div>
-
-                            <div class="card-back">
-
-                                ${cardValue}
-
-                            </div>
-
+                        <div class="card-back">
+                            ${cardValue}
                         </div>
 
-                    `;
+                    </div>
 
+                `;
 
-                    card.addEventListener(
+                card.addEventListener(
+                    "click",
+                    flipCard
+                );
 
-                        "click",
+                board.appendChild(card);
 
-                        flipCard
-
-                    );
-
-
-                    board.appendChild(
-                        card
-                    );
-
-                }
-
-            );
+            });
 
         }
 
 
-
-        /* =====================================
-           FLIP CARD
-        ===================================== */
-
+        /* FLIP CARD */
 
         function flipCard(){
-
 
             if(
 
                 lockBoard ||
 
-                this.classList.contains(
-                    "flipped"
-                ) ||
+                this.classList.contains("flipped") ||
 
-                this.classList.contains(
-                    "matched"
-                )
+                this.classList.contains("matched")
 
             ){
-
                 return;
-
             }
-
 
             if(!gameStarted){
 
-
                 gameStarted = true;
 
+                timer = setInterval(() => {
 
-                timer =
+                    seconds++;
 
-                    setInterval(
+                    updateTimer();
 
-                        () => {
-
-
-                            seconds++;
-
-
-                            updateTimer();
-
-
-                        },
-
-                        1000
-
-                    );
+                },1000);
 
             }
 
+            this.classList.add("flipped");
 
-            this.classList.add(
-                "flipped"
-            );
+            flippedCards.push(this);
 
-
-            flippedCards.push(
-                this
-            );
-
-
-            if(
-                flippedCards.length === 2
-            ){
-
+            if(flippedCards.length === 2){
 
                 moves++;
 
-
                 document.getElementById(
                     "moves"
-                ).textContent =
-
-                    moves;
-
+                ).textContent = moves;
 
                 checkMatch();
 
@@ -2350,26 +1906,15 @@
         }
 
 
-
-        /* =====================================
-           TIMER
-        ===================================== */
-
+        /* TIMER */
 
         function updateTimer(){
 
-
             const minutes =
-
-                Math.floor(
-                    seconds / 60
-                );
-
+                Math.floor(seconds / 60);
 
             const secs =
-
                 seconds % 60;
-
 
             document.getElementById(
                 "timer"
@@ -2380,152 +1925,90 @@
         }
 
 
-
-        /* =====================================
-           MATCH CHECK
-        ===================================== */
-
+        /* MATCH CHECK */
 
         function checkMatch(){
 
-
             lockBoard = true;
 
-
             const [
-
                 card1,
-
                 card2
-
             ] = flippedCards;
-
 
             if(
 
                 card1.dataset.value ===
-
                 card2.dataset.value
 
             ){
 
+                card1.classList.remove("flipped");
 
-                card1.classList.remove(
-                    "flipped"
-                );
+                card2.classList.remove("flipped");
 
+                card1.classList.add("matched");
 
-                card2.classList.remove(
-                    "flipped"
-                );
-
-
-                card1.classList.add(
-                    "matched"
-                );
-
-
-                card2.classList.add(
-                    "matched"
-                );
-
+                card2.classList.add("matched");
 
                 matches++;
-
 
                 document.getElementById(
                     "matches"
                 ).textContent =
-
                     `${matches} / ${currentPairs}`;
-
 
                 flippedCards = [];
 
-
                 lockBoard = false;
 
-
-                if(
-                    matches === currentPairs
-                ){
+                if(matches === currentPairs){
 
                     levelComplete();
 
                 }
 
             }
-
             else{
-
 
                 wrongAttempts++;
 
+                setTimeout(() => {
 
-                setTimeout(
+                    card1.classList.remove("flipped");
 
-                    () => {
+                    card2.classList.remove("flipped");
 
+                    flippedCards = [];
 
-                        card1.classList.remove(
-                            "flipped"
-                        );
+                    lockBoard = false;
 
-
-                        card2.classList.remove(
-                            "flipped"
-                        );
-
-
-                        flippedCards = [];
-
-
-                        lockBoard = false;
-
-
-                    },
-
-                    750
-
-                );
+                },750);
 
             }
 
         }
 
 
-
-        /* =====================================
-           SCORE
-        ===================================== */
-
+        /* SCORE */
 
         function calculateScore(){
 
-
             const base =
-
                 currentLevel * 1000;
 
-
             const movePenalty =
-
                 moves * 30;
 
-
             const timePenalty =
-
                 seconds * 3;
-
 
             return Math.max(
 
                 100,
 
                 base -
-
                 movePenalty -
-
                 timePenalty
 
             );
@@ -2533,45 +2016,24 @@
         }
 
 
-
-        /* =====================================
-           LEVEL COMPLETE
-        ===================================== */
-
+        /* LEVEL COMPLETE */
 
         function levelComplete(){
 
-
-            clearInterval(
-                timer
-            );
-
+            clearInterval(timer);
 
             const score =
-
                 calculateScore();
-
 
             document.getElementById(
                 "score"
-            ).textContent =
+            ).textContent = score;
 
-                score;
-
-
-            /* HIGH SCORE */
-
-
-            if(
-                score > highScore
-            ){
+            if(score > highScore){
 
                 highScore = score;
 
             }
-
-
-            /* UNLOCK NEXT LEVEL */
 
 
             if(
@@ -2582,85 +2044,57 @@
 
             ){
 
-
                 unlockedLevel =
-
                     currentLevel + 1;
 
             }
 
 
-            /* ACHIEVEMENTS */
-
-
-            if(
-                seconds < 30
-            ){
+            if(seconds < 30){
 
                 achievements.speed = true;
 
             }
 
-
-            if(
-                wrongAttempts === 0
-            ){
+            if(wrongAttempts === 0){
 
                 achievements.perfect = true;
 
             }
 
-
-            if(
-                currentLevel >= 10
-            ){
+            if(currentLevel >= 10){
 
                 achievements.warrior = true;
 
             }
 
-
-            if(
-                currentLevel === 20
-            ){
+            if(currentLevel === 20){
 
                 achievements.ultimate = true;
 
             }
 
 
-            /* SAVE CURRENT PLAYER */
-
-
             savePlayerProgress();
-
 
             updateAchievements();
 
 
             const title =
-
                 document.getElementById(
                     "winTitle"
                 );
 
-
             const stats =
-
                 document.getElementById(
                     "winStats"
                 );
 
 
-            if(
-                currentLevel === 20
-            ){
-
+            if(currentLevel === 20){
 
                 title.textContent =
-
                     "👑 ULTIMATE MEMORY MASTER!";
-
 
                 stats.innerHTML = `
 
@@ -2696,22 +2130,15 @@
 
                 `;
 
-
                 document.getElementById(
                     "nextButton"
-                ).style.display =
-
-                    "none";
+                ).style.display = "none";
 
             }
-
             else{
 
-
                 title.textContent =
-
                     "🎉 LEVEL COMPLETE!";
-
 
                 stats.innerHTML = `
 
@@ -2743,11 +2170,9 @@
 
                 `;
 
-
                 document.getElementById(
                     "nextButton"
                 ).style.display =
-
                     "inline-block";
 
             }
@@ -2755,44 +2180,26 @@
 
             document.getElementById(
                 "winMessage"
-            ).style.display =
-
-                "block";
-
+            ).style.display = "block";
 
             createConfetti();
-
 
             buildLevelMap();
 
         }
 
 
-
-        /* =====================================
-           NEXT LEVEL
-        ===================================== */
-
+        /* NEXT LEVEL */
 
         function nextLevel(){
 
-
-            if(
-                currentLevel < 20
-            ){
-
+            if(currentLevel < 20){
 
                 currentLevel++;
 
-
-                /* SAVE CURRENT PLAYER */
-
-
                 savePlayerProgress();
 
-
                 startGame();
-
 
                 window.scrollTo({
 
@@ -2807,113 +2214,68 @@
         }
 
 
-
-        /* =====================================
-           SHOW LEVEL MAP
-        ===================================== */
-
+        /* SHOW LEVEL MAP */
 
         function showLevelMap(){
 
-
             const map =
-
                 document.getElementById(
                     "levelMap"
                 );
 
+            if(map.style.display === "none"){
 
-            if(
-                map.style.display === "none"
-            ){
-
-                map.style.display =
-                    "block";
+                map.style.display = "block";
 
             }
-
             else{
 
-
-                map.style.display =
-                    "none";
+                map.style.display = "none";
 
             }
-
 
             buildLevelMap();
 
         }
 
 
-
-        /* =====================================
-           BUILD LEVEL MAP
-        ===================================== */
-
+        /* BUILD LEVEL MAP */
 
         function buildLevelMap(){
 
-
             const grid =
-
                 document.getElementById(
                     "levelGrid"
                 );
 
-
             grid.innerHTML = "";
 
-
-            for(
-
-                let i = 1;
-
-                i <= 20;
-
-                i++
-
-            ){
-
+            for(let i = 1;i <= 20;i++){
 
                 const button =
-
                     document.createElement(
                         "button"
                     );
-
 
                 button.classList.add(
                     "level-btn"
                 );
 
-
-                if(
-                    i > unlockedLevel
-                ){
-
+                if(i > unlockedLevel){
 
                     button.classList.add(
                         "locked"
                     );
 
-
                     button.innerHTML =
-
                         `🔒<br>Level ${i}`;
 
-
-                    button.disabled =
-                        true;
+                    button.disabled = true;
 
                 }
-
                 else{
 
-
-                    if(
-                        i < unlockedLevel
-                    ){
+                    if(i < unlockedLevel){
 
                         button.classList.add(
                             "completed"
@@ -2921,10 +2283,7 @@
 
                     }
 
-
-                    if(
-                        i === currentLevel
-                    ){
+                    if(i === currentLevel){
 
                         button.classList.add(
                             "current"
@@ -2932,128 +2291,80 @@
 
                     }
 
-
                     button.innerHTML =
-
                         `Level ${i}`;
 
+                    button.onclick = () => {
 
-                    button.onclick =
+                        currentLevel = i;
 
-                        () => {
+                        savePlayerProgress();
 
+                        startGame();
 
-                            currentLevel = i;
+                        document.getElementById(
+                            "levelMap"
+                        ).style.display = "none";
 
-
-                            /* SAVE CURRENT PLAYER */
-
-
-                            savePlayerProgress();
-
-
-                            startGame();
-
-
-                            document.getElementById(
-                                "levelMap"
-                            ).style.display =
-
-                                "none";
-
-                        };
+                    };
 
                 }
 
-
-                grid.appendChild(
-                    button
-                );
+                grid.appendChild(button);
 
             }
 
         }
 
 
-
-        /* =====================================
-           ACHIEVEMENTS
-        ===================================== */
-
+        /* ACHIEVEMENTS */
 
         function updateAchievements(){
 
-
             const achievementElements = {
 
+                speed:"speedAchievement",
 
-                speed:
-                    "speedAchievement",
+                perfect:"perfectAchievement",
 
+                warrior:"warriorAchievement",
 
-                perfect:
-                    "perfectAchievement",
-
-
-                warrior:
-                    "warriorAchievement",
-
-
-                ultimate:
-                    "ultimateAchievement"
+                ultimate:"ultimateAchievement"
 
             };
 
-
             Object.keys(
                 achievementElements
-            ).forEach(
+            ).forEach(key => {
 
-                key => {
+                const element =
+                    document.getElementById(
+                        achievementElements[key]
+                    );
 
+                if(achievements[key]){
 
-                    const element =
+                    element.classList.add(
+                        "unlocked"
+                    );
 
-                        document.getElementById(
-                            achievementElements[key]
-                        );
+                }
+                else{
 
-
-                    if(
-                        achievements[key]
-                    ){
-
-
-                        element.classList.add(
-                            "unlocked"
-                        );
-
-                    }
-
-                    else{
-
-
-                        element.classList.remove(
-                            "unlocked"
-                        );
-
-                    }
+                    element.classList.remove(
+                        "unlocked"
+                    );
 
                 }
 
-            );
+            });
 
         }
 
 
-
-        /* =====================================
-           CONFETTI
-        ===================================== */
-
+        /* CONFETTI */
 
         function createConfetti(){
-
 
             const symbols = [
 
@@ -3069,95 +2380,54 @@
 
             ];
 
-
-            for(
-
-                let i = 0;
-
-                i < 70;
-
-                i++
-
-            ){
-
+            for(let i = 0;i < 70;i++){
 
                 const item =
-
                     document.createElement(
                         "div"
                     );
-
 
                 item.classList.add(
                     "confetti"
                 );
 
-
                 item.textContent =
 
                     symbols[
-
                         Math.floor(
-
                             Math.random() *
-
                             symbols.length
-
                         )
-
                     ];
 
-
                 item.style.left =
-
                     Math.random() *
-
                     100 +
-
                     "vw";
-
 
                 item.style.fontSize =
 
                     (
-
                         Math.random() *
-
                         20 +
-
                         14
-
                     ) +
-
                     "px";
-
 
                 item.style.animationDuration =
 
                     (
-
                         Math.random() *
-
                         2 +
-
                         2
-
                     ) +
-
                     "s";
 
-
-                document.body.appendChild(
-                    item
-                );
-
+                document.body.appendChild(item);
 
                 setTimeout(
-
                     () => item.remove(),
-
                     4500
-
                 );
 
             }
@@ -3165,40 +2435,25 @@
         }
 
 
-
-        /* =====================================
-           RESET CURRENT PLAYER ONLY
-        ===================================== */
-
+        /* RESET CURRENT PLAYER */
 
         function resetProgress(){
 
+            const answer = confirm(
 
-            const answer =
+                `Reset all progress for ${playerName}?`
 
-                confirm(
-
-                    `Reset all progress for ${playerName}?`
-
-                );
-
+            );
 
             if(!answer){
-
                 return;
-
             }
-
-
-            /* RESET ONLY CURRENT PLAYER */
-
 
             unlockedLevel = 1;
 
             currentLevel = 1;
 
             highScore = 0;
-
 
             achievements = {
 
@@ -3212,35 +2467,22 @@
 
             };
 
-
             savePlayerProgress();
 
-
             updateAchievements();
-
 
             startGame();
 
         }
 
 
+        /* PWA SERVICE WORKER */
 
-        /* =====================================
-           PWA SERVICE WORKER
-        ===================================== */
-
-
-        if(
-            "serviceWorker" in navigator
-        ){
-
+        if("serviceWorker" in navigator){
 
             window.addEventListener(
-
                 "load",
-
                 () => {
-
 
                     navigator.serviceWorker
 
@@ -3248,40 +2490,30 @@
                             "./service-worker.js"
                         )
 
-                        .then(
+                        .then(() => {
 
-                            () => {
+                            console.log(
+                                "MemoryVerse Service Worker Registered!"
+                            );
 
-                                console.log(
-                                    "MemoryVerse Service Worker Registered!"
-                                );
+                        })
 
-                            }
+                        .catch(error => {
 
-                        )
+                            console.log(
+                                "Service Worker Error:",
+                                error
+                            );
 
-                        .catch(
-
-                            error => {
-
-                                console.log(
-                                    "Service Worker Error:",
-                                    error
-                                );
-
-                            }
-
-                        );
+                        });
 
                 }
-
             );
 
         }
 
 
     </script>
-
 
 </body>
 
